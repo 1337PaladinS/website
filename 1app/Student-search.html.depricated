@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title> 1Application </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+
+		<!-- SmartAdmin RTL Support -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> 
+
+		<link rel="stylesheet" type="text/css" media="screen" href="css/custom_style.css">
+
+		<!-- #FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon-1app.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon-1app.ico" type="image/x-icon">
+
+		<!-- #GOOGLE FONT -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+		<!-- #APP SCREEN / ICONS -->
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		<script src="js/sck-wg.js"> </script>
+
+	</head>
+	
+	<!-- #BODY -->
+	<!-- Possible Classes
+
+		* 'smart-style-{SKIN#}'
+		* 'smart-rtl'         - Switch theme mode to RTL
+		* 'menu-on-top'       - Switch to top navigation (no DOM change required)
+		* 'no-menu'			  - Hides the menu completely
+		* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+		* 'fixed-header'      - Fixes the header
+		* 'fixed-navigation'  - Fixes the main menu
+		* 'fixed-ribbon'      - Fixes breadcrumb
+		* 'fixed-page-footer' - Fixes footer
+		* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+	-->
+	<body onLoad="checkCookie()">
+       <div class="scroll-top-wrapper">
+       <span class="scroll-top-inner">
+         <i class="fa fa-2x fa-arrow-circle-up"></i>
+       </span>
+     </div>
+		<!-- #HEADER -->
+		<header id="header">
+			<div id="logo-group">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo"> <img src="img/Logo.png" alt="1Application"> </span>
+				<!-- END LOGO PLACEHOLDER -->
+			</div>
+
+			<!-- #TOGGLE LAYOUT BUTTONS -->
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+				
+				<!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+				
+				<!-- #MOBILE -->
+				<!-- Top menu profile link : this shows only when top menu is active -->
+				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+					<li class="">
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
+							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<!-- logout button -->
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a title="Log Out"><i class="fa fa-sign-out"></i></a> </span>				
+                </div>
+				<!-- end logout button -->
+				
+				<!-- fullscreen button -->
+				<div id="fullscreen" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+				</div>
+				<!-- end fullscreen button -->
+
+			</div>
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- END HEADER -->
+
+		<!-- #NAVIGATION -->
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel">
+
+			<!-- User info -->
+			<div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+
+						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<span id="username_head">
+							
+						</span>
+						
+				</span>
+			</div>
+			<!-- end user info -->
+
+			<nav>
+				<!-- 
+				NOTE: Notice the gaps after each icon usage <i></i>..
+				Please note that these links work a bit different than
+				traditional href="" links. See documentation for details.
+				-->
+
+				<ul>
+					<li>
+						<a href="Student-Dashboard.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Profile Management</span></a>
+                     <ul>
+							<li>
+								<a href="Student-Profile.html" title="Profile"><span class="menu-item-parent">Profile</span></a>
+							</li>
+							<li>
+								<a href="Student-family.html" title="Family"><span class="menu-item-parent">Family</span></a>
+							</li>
+                            <li>
+								<a href="Student-education.html" title="Education"><span class="menu-item-parent">Education</span></a>
+							</li>
+                            <li>
+								<a href="Student-testing.html" title="Testing"><span class="menu-item-parent">Testing</span></a>
+							</li>
+                            <li>
+								<a href="Student-docupload.html" title="Doc Upload"><span class="menu-item-parent">Document Upload</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="active">
+						<a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Advanced Search</span></a>
+					</li>
+				</ul>
+			</nav>
+			
+
+			<span class="minifyme" data-action="minifyMenu"> 
+				<i class="fa fa-arrow-circle-left hit"></i> 
+			</span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+
+				<!-- breadcrumb -->
+				<ol class="breadcrumb">
+					
+				</ol>
+				<!-- end breadcrumb -->
+
+			</div>
+			<!-- END RIBBON -->
+			
+			
+
+			<!-- MAIN CONTENT -->
+			<div id="content">
+
+				<!-- row -->
+				<div class="row">
+					
+					<!-- col -->
+					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+						<h1 class="page-title txt-color-blueDark">
+							
+							Advanced Search
+								
+						</h1>
+					</div>
+					<!-- end col -->
+					
+				</div>
+				<!-- end row -->
+				
+				<!--
+					The ID "widget-grid" will start to initialize all widgets below 
+					You do not need to use widgets if you dont want to. Simply remove 
+					the <section></section> and you can use wells or panels instead 
+					-->
+				
+				<!-- widget grid -->
+				<section id="widget-grid" class="">
+				
+					<!-- row -->
+					<div class="row">
+						
+						<!-- NEW WIDGET START -->
+						<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                           <form class="form-horizontal">
+                             <fieldset>
+                               <div class="form-group">
+                                  <label class="col-md-2 control-label">College Name</label>
+                                  <div class="col-md-5">
+                                      <input class="form-control" type="text" id="collegename">
+                                  </div>
+							   </div>
+
+                               <div class="form-group">
+													<label class="col-md-2 control-label">State/City</label>
+                                                     <div class="col-md-2">
+													<select class="select2" id="select_state">
+                                                      
+														<optgroup label="Select State" id="sel_state"> 
+                                                        <!--added id for add state list RWG 3/19/16 -->
+														</optgroup>
+                                                      
+													</select>
+													</div>
+													
+													<div class="col-md-3">
+													<select class="select2" id="select_city">
+                                                      
+														<optgroup label="Select City" id="sel_city"> 
+                                                        <!--added id for add state list RWG 3/19/16 -->
+														</optgroup>
+                                                      
+													</select>
+													
+                                                   </div>
+								</div>
+
+                                <div class="form-group">
+                                        <label l for="from" class="col-md-2 control-label">Deadline Date Range</label>
+                                <div class="col-md-5">
+															
+                                      <div class="col-sm-6">
+				
+														<div class="form-group">
+															<div class="input-group">
+																<input class="form-control datepicker" id="from" type="text" placeholder="From">
+																<label for="from" class="input-group-addon btn"><span class="fa fa-calendar"></span></label>
+															</div>
+														</div>
+				
+									  </div>
+                                      <div class="col-sm-6">
+				
+														<div class="form-group">
+															<div class="input-group">
+																<input class="form-control datepicker" id="to" type="text" placeholder="To">
+																<label for="to" class="input-group-addon btn"><span class="fa fa-calendar"></span></label>
+															</div>
+														</div>
+				
+									  </div>				
+				
+								</div>
+                                
+                                </div>
+
+                                <div class="form-group">
+													<label class="col-md-2 control-label">Courses offered Amount should be less than</label>
+                                                     <div class="col-md-5">
+													<select style="width:100%" class="select2">
+                                                      
+														<optgroup label="Select Amount">
+															<option value="">5000</option>
+															<option value="">10000</option>
+														</optgroup>
+                                                      
+													</select>
+													
+                                                   </div>
+								</div>
+                             </fieldset>
+                           </form>
+                          
+						</article>
+						<!-- WIDGET END -->   
+                     
+					</div>
+
+                    <div class="row">
+                      <div class="col-md-2">
+                        <a href="javascript:void(0);" class="btn btn-labeled btn-primary" id="search-table"> <span class="btn-label"><i class="fa fa-search"></i></span>Search </a>
+
+					    </div>
+                      
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                         <hr class="simple" style="border-top-color: rgba(0, 0, 0, 0.2)">
+                        </div>
+                    </div>
+				    
+					<!-- end row -->
+						
+				</section>
+				<!-- end widget grid -->	
+
+                 <!--<section id="table-results" class="">
+				
+					<!-- row -->
+					<!--<div class="row">
+						
+						<!-- NEW WIDGET START -->
+						
+				
+                        
+                        <table id="jqgrid"></table>
+                        <div id="pjqgrid"></div>
+                       
+                 
+						
+						<!-- WIDGET END -->
+						
+					<!--</div>
+                    
+				    
+					<!-- end row -->
+				
+				<!--</section> -->
+                   
+                 
+
+			</div>
+			<!-- END MAIN CONTENT -->
+
+		</div>
+		<!-- END MAIN PANEL -->
+
+		<!-- PAGE FOOTER -->
+		<div class="page-footer">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<span class="txt-color-white">1Application © 2016</span>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE FOOTER -->
+
+		<!--================================================== -->
+
+		<script>
+           window.paceOptions = {
+              ajax: {
+                 trackMethods: ['GET', 'POST', 'PUT', 'DELETE', 'REMOVE']
+              }   
+            };
+         </script>
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+        <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+			}
+		</script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+			}
+		</script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="js/app.config.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+
+		<!-- BOOTSTRAP JS -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="js/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices -->
+		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+
+		<!--[if IE 8]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.min.js"></script>
+
+		<!-- PAGE RELATED PLUGIN(S) -->
+        <script src="js/plugin/jqgrid/jquery.jqGrid.min.js"></script>
+		<script src="js/plugin/jqgrid/grid.locale-en.min.js"></script>
+		
+
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+			 	   $(".datepicker").datepicker({
+						changeYear: true
+					});
+				   $("#username_head").text(getCookie("userfirstname"));
+				  
+				   pageSetUp();
+                   var user_id = getCookie("userid");
+				 
+				   <!-- Ajax call for Logout - Start -->
+
+                    $('#logout').click(function() {
+
+                     $.ajax({
+                     type: 'POST',
+                     url: get_endpoint() + "oneapplication/user/logout/" + user_id, 
+                     contentType:"application/json",
+                     datatype : "json",
+                     success: function (data) {
+                      alert(data.message);
+                      if(data.status == "SUCCESS") {
+                        eraseCookie("userid");
+                        eraseCookie("username");
+                        eraseCookie("userfirstname");
+                        eraseCookie("userrole");
+                        location.href = "login.html";
+                        } // End If
+
+                       else if (data.status == "FAILURE") {
+                                              
+                      } // End Else If
+
+                      }, // End Success Call
+
+                        error: function (data, textStatus, errorThrown) { //In case of error
+                         alert(errorThrown);
+                     }
+                   
+                     }); // End Ajax Call
+                        
+                    }); // End Click function
+           
+                 <!-- Ajax call for Logout - End -->
+
+			     
+                  var data1 = [["1", "ABC", "ABC"], ["2", "ABC", "ABC"]]; 
+                  var data2 = [["1", "XYZ", "XYZ"], ["2", "XYZ", "XYZ"], ["3", "XYZ", "XYZ"]];  
+                 
+                 /*build the state drop down RWG*/
+		            var stateSelector = $("#sel_state");     
+                    $.ajax({
+                    type: 'GET', 
+                    url: get_endpoint() + "oneapplication/common/country/95", 
+                    contentType:"application/json",
+                    success: function (data) {
+         
+				   
+                   if(data.status == "SUCCESS") {
+					var i;
+					for (i = 0; i < data.responseData.length; ++i) {
+						// add the options
+						console.log('appending '+data.responseData[i].id+ ' '+data.responseData[i].stateDispName);
+						if( i == 0){
+							$("#sel_state").append('<option value="'+ data.responseData[i].id +'" selected>' + data.responseData[i].stateDispName + '</option>');
+						}
+						else {
+							$("#sel_state").append('<option value="'+ data.responseData[i].id +'">' + data.responseData[i].stateDispName + '</option>');
+						}
+						
+					}
+					$("#sel_state").trigger('change');
+					//alert("Could fetch state detail");
+                   } // End If
+                      else if (data.status == "FAILURE") {
+					  console.log("Could not fetch state detail. Please try reloading the page");
+                         //$("#message").removeClass('hidden');
+                      } // End Else If
+                   },
+                     error: function (data, textStatus, errorThrown) { //In case of error
+                     		console.log("Error getting States");
+                     }
+                    });
+                    /*build the state dropdown end */
+				  console.log('before calling status change');
+				 /*build the CITY drop down RWG*/
+				  $("#select_state").change(function () {
+				  console.log('called status change');
+				  var val = $('#sel_state').find(":selected").val();
+				  console.log("val:" + val)
+			      $.ajax({
+                    type: 'GET', 
+                    url: get_endpoint() + "oneapplication/common/state/"+ val, 
+                    contentType:"application/json",
+                    success: function (data) {
+         
+				   
+                   if(data.status == "SUCCESS") {
+					var i;
+					for (i = 0; i < data.responseData.length; ++i) {
+						// add the options
+						console.log('appending '+data.responseData[i].id+ ' '+data.responseData[i].cityDispName);
+						if( i == 0){
+							$("#sel_city").append('<option value="'+ data.responseData[i].id +'" selected>' + data.responseData[i].cityDispName+ '</option>');
+						}
+						else {
+							$("#sel_city").append('<option value="'+ data.responseData[i].id +'">' + data.responseData[i].cityDispName+ '</option>');
+						}
+					}
+					$("#sel_city").trigger('change');
+                   } // End If
+                      else if (data.status == "FAILURE") {
+					  console.log("Could not fetch state detail. Please try reloading the page");
+                      } // End Else If
+                   },
+                     error: function (data, textStatus, errorThrown) { //In case of error
+                     
+                     }
+                    })
+					});
+					
+                    /*build the city dropdown end */
+                 
+                   
+                 /* SEARCH RESULTS - TABLE */
+                 function addCollege(id) {
+                 	console.log(id)
+                 }
+                
+                 jQuery("#jqgrid").jqGrid({
+                    datatype : "local",
+					height : 'auto',
+					colModel : [{name : 'ID',index : 'id',width : "20%",align : 'center'}, 
+						    {name : 'College Name',index : 'name',width : "90%",editable : true}, 
+						    {name : 'Application Fee',index : 'fee',width : "25%",editable : true}, 
+						    {name : 'Status',index : 'status',width : "25%",editable : true}],
+                    			rowNum : 10,
+					rowList : [10, 20, 30],
+					pager : '#pjqgrid',
+					sortname : 'id',
+					toolbarfilter : true,
+					viewrecords : true,
+					sortorder : "asc",
+					editurl : get_endpoint() + "oneapplication/secure/student/add/colleges",
+					caption : "List of Colleges",
+					caption : "List of Colleges",
+					multiselect : true,
+					gridview: true,
+                    autowidth : true,
+                    shrinkToFit : true,
+                    rowattr: function (item) {
+                    	console.log(item);
+                    	if (item.Status == "APPLIED") {
+    				//jQuery("#jqg_jqgrid_"+ rowId).attr("ui-state-disabled", true);
+        			return {"class": "ui-state-disabled ui-jqgrid-disablePointerEvents"};
+    			}
+		    },
+		    
+		    beforeSelectRow: function (rowid, e) {
+		    	console.log(rowid);
+		    	console.log($('#jqgrid').getRowData(rowid).Status);
+		    	console.log(e);
+		    	
+		    	if ($('#jqgrid').getRowData(rowid).Status == "APPLIED") {
+		    	//if ($(e.target).closest("tr.jqgrow").hasClass("ui-state-disabled")) {
+		    		console.log("returning false");
+		    		console.log("Setting Row Disabled: "+ rowId);
+		    		jQuery("#jqg_jqgrid_"+ rowid).attr("hidden", true);
+		        	return false;   // not allow select the row
+		    	}
+		    	
+		    	console.log("returning true");
+		    	return true;    // allow select the row
+		    }
+
+					
+				}); // End jqGrid
+
+                  $("#jqgrid").hide();
+                  $("#pjqgrid").hide();
+                  
+    		  function applyToCollege() { 
+		  	console.log("Add Button Clicked");
+			/***** Add Action Code for Add button here *****/
+			var $grid = $("#jqgrid");
+			var selIds = $grid.jqGrid("getGridParam", "selarrrow");
+			console.log(selIds);
+			console.log(selIds.length);
+			var i, n, cellValues = [];
+			for (i = 0, n = selIds.length; i < n; i++) {
+			    console.log($grid.jqGrid("getCell", selIds[i], "ID"));
+			    cellValues.push($grid.jqGrid("getCell", selIds[i], "ID"));
+			}
+			console.log(cellValues.join(","));
+                        var collegeadddata = { "userId": getCookie("userid"), "collegeIds": cellValues };
+                        console.log(collegeadddata);
+		 	$.ajax({
+                    		type: 'POST', 
+		                url: get_endpoint() + "oneapplication/secure/student/add/colleges", 
+		                contentType:"application/json",
+		                datatype : "json",
+			        data: JSON.stringify(collegeadddata),
+		                success: function (data) {
+			            if(data.status == "SUCCESS") {
+					    alert(data.message);
+			            } // End If
+			            else if (data.status == "FAILURE") {
+					alert("Could not fetch state detail. Please try reloading the page");
+			                //$("#message").removeClass('hidden');
+			            } // End Else If
+		               },
+		               error: function (data, textStatus, errorThrown) { //In case of error
+		                       alert(errorThrown);
+		               }
+	                });
+		}
+                  
+
+                jQuery("#jqgrid").navGrid('#pjqgrid',{edit:false,add:true,del:false,search:false, addfunc: applyToCollege}); 
+		jQuery("#jqgrid").jqGrid('inlineNav', "#pjqgrid",{edit:false,add:false,save:false,cancel:false});
+				/* Add tooltips */
+				$('.navtable .ui-pg-button').tooltip({
+					container : 'body'
+				});
+
+
+				// remove classes
+				$(".ui-jqgrid").removeClass("ui-widget ui-widget-content");
+				$(".ui-jqgrid-view").children().removeClass("ui-widget-header ui-state-default");
+				$(".ui-jqgrid-labels, .ui-search-toolbar").children().removeClass("ui-state-default ui-th-column ui-th-ltr");
+				$(".ui-jqgrid-pager").removeClass("ui-state-default");
+				$(".ui-jqgrid").removeClass("ui-widget-content");
+
+				// add classes
+				$(".ui-jqgrid-htable").addClass("table table-bordered table-hover");
+				$(".ui-jqgrid-btable").addClass("table table-bordered table-striped");
+
+				$(".ui-pg-div").removeClass().addClass("btn btn-sm btn-primary");
+				$(".ui-icon.ui-icon-plus").removeClass().addClass("fa fa-plus");
+				$(".ui-icon.ui-icon-pencil").removeClass().addClass("fa fa-pencil");
+				$(".ui-icon.ui-icon-trash").removeClass().addClass("fa fa-trash-o");
+				$(".ui-icon.ui-icon-search").removeClass().addClass("fa fa-search");
+				$(".ui-icon.ui-icon-refresh").removeClass().addClass("fa fa-refresh");
+				$(".ui-icon.ui-icon-disk").removeClass().addClass("fa fa-save").parent(".btn-primary").removeClass("btn-primary").addClass("btn-success");
+				$(".ui-icon.ui-icon-cancel").removeClass().addClass("fa fa-times").parent(".btn-primary").removeClass("btn-primary").addClass("btn-danger");
+
+				$(".ui-icon.ui-icon-seek-prev").wrap("<div class='btn btn-sm btn-default'></div>");
+				$(".ui-icon.ui-icon-seek-prev").removeClass().addClass("fa fa-backward");
+
+				$(".ui-icon.ui-icon-seek-first").wrap("<div class='btn btn-sm btn-default'></div>");
+				$(".ui-icon.ui-icon-seek-first").removeClass().addClass("fa fa-fast-backward");
+
+				$(".ui-icon.ui-icon-seek-next").wrap("<div class='btn btn-sm btn-default'></div>");
+				$(".ui-icon.ui-icon-seek-next").removeClass().addClass("fa fa-forward");
+
+				$(".ui-icon.ui-icon-seek-end").wrap("<div class='btn btn-sm btn-default'></div>");
+				$(".ui-icon.ui-icon-seek-end").removeClass().addClass("fa fa-fast-forward");
+
+                var jsonquerydata = "";
+		  
+		  var names = ["id", "name", "fee", "status"];
+		  var mydata = [];
+		  
+		  $("#search-table").click(function(){   
+		  
+		  	var state = document.getElementById("select_state").value;
+		  	var city = document.getElementById("select_city").value;
+		  	var college = document.getElementById("collegename").value;
+			console.log(college);
+		  	console.log(state);
+		  	console.log(city);
+                  	$('#jqgrid').fadeIn(3000);
+                  	$('#pjqgrid').fadeIn(3000);
+			jsonquerydata = "{\"criterias\":[{\"param\": \"collegeName\",\"searchType\": \"contains\",\"searchString\": ";
+		 	jsonquerydata =jsonquerydata  + "\"" + college + "\"";
+		 	jsonquerydata =jsonquerydata  +"},{\"param\":\"state\",\"searchType\": \"isEqualTo\",\"searchString\": ";
+		 	jsonquerydata =jsonquerydata  + "\"" + state + "\"";
+		 	jsonquerydata =jsonquerydata  +"},{\"param\": \"city\",\"searchType\": \"isEqualTo\",\"searchString\": ";
+		 	jsonquerydata =jsonquerydata  + "\"" + city + "\"";
+		 	jsonquerydata =jsonquerydata  +"}],\"operators\": [\"OR\",\"OR\"],\"userId\":" + getCookie("userid") + "}";
+		 	console.log(jsonquerydata );
+		 	jQuery('#jqgrid').jqGrid('clearGridData');
+		 	
+		 	$.ajax({
+                    	type: 'POST', 
+		                url: get_endpoint() + "oneapplication/secure/student/search/colleges", 
+		                contentType:"application/json",
+		                datatype : "json",
+				        data: jsonquerydata,
+		                success: function (data) {
+                   			if(data.status == "SUCCESS") {
+						    for (i = 0; i < data.responseData.length; ++i) {
+							console.log(data.responseData[i]);
+							console.log('appending '+data.responseData[i].collegeId+ ' '+data.responseData[i].collegeName);
+							if(data.responseData[i].status == "NOT APPLIED" && data.responseData[i].addedStatus == "NOT ADDED"){
+								mydata[i] = {ID:data.responseData[i].collegeId,'College Name':data.responseData[i].collegeName, 'Application Fee':data.responseData[i].applicationFee, Status:data.responseData[i].status};
+								jQuery("#jqgrid").jqGrid('addRowData', i + 1, mydata[i]);
+							}
+						}
+                   			} // End If
+                      			else if (data.status == "FAILURE") {
+                      				console.log(data.message);
+					  	//alert("Could not fetch college detail. Please try reloading the page");
+                                        } // End Else If
+                   		},
+                     		error: function (data, textStatus, errorThrown) { //In case of error
+                     
+                     		}
+                    	});
+		 }); // End Click function
+
+		})
+		</script>
+
+       <!-- SCRIPT FOR BACK TO TOP BUTTON-->
+         <script>
+ 
+       $(function(){
+ 
+	    $(document).on( 'scroll', function(){
+ 
+		    if ($(window).scrollTop() > 100) {
+			  $('.scroll-top-wrapper').addClass('show');
+		      } else {
+			   $('.scroll-top-wrapper').removeClass('show');
+		      }
+	        });
+         });
+        </script>
+
+		<script>
+         
+        $(function(){
+         
+            $(document).on( 'scroll', function(){
+         
+                if ($(window).scrollTop() > 100) {
+                    $('.scroll-top-wrapper').addClass('show');
+                } else {
+                    $('.scroll-top-wrapper').removeClass('show');
+                }
+            });
+         
+            $('.scroll-top-wrapper').on('click', scrollToTop);
+        });
+         
+        function scrollToTop() {
+            verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+            element = $('body');
+            offset = element.offset();
+            offsetTop = offset.top;
+            $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+        }
+        </script>
+
+        <!-- SCRIPT FOR BACK TO TOP BUTTON END -->
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+				_gaq.push(['_trackPageview']);
+			
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+
+	</body>
+
+</html>

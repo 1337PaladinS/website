@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-us" id="extr-page">
+	<head>
+		<meta charset="utf-8">
+		<title> 1Application</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+
+		<!-- SmartAdmin RTL Support -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> 
+
+		<link rel="stylesheet" type="text/css" media="screen" href="css/custom_style.css">
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+
+		<!-- #FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon-1app.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon-1app.ico" type="image/x-icon">
+
+		<!-- #GOOGLE FONT -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+		<!-- #APP SCREEN / ICONS -->
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+        <script src="js/sck-wg.js"> </script>
+
+	</head>
+	
+	<body class="animated fadeInDown">
+
+		<header> 
+
+				
+							<div class="navbar navbar-inverse" id="header-nav">
+								
+								<!-- Brand and toggle get grouped for better mobile display -->
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+									<!--<a class="navbar-brand" href="#"></a> -->
+                                  <span id="logo"><a href="index.html"><img src="img/LogoBright.png" alt="1Application"></a></span>
+								</div>
+					
+								<!-- Collect the nav links, forms, and other content for toggling -->
+								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+										<ul class="nav navbar-nav">
+											<li>
+												<a href="index.html">Features</a>
+											</li>
+						
+											<li>
+												<a href="pricing.html">Pricing</a>
+											</li>
+
+                                            <li>
+												<a href="demo.html">Demo</a>
+											</li>
+
+                                            <li>
+												<a href="blog.html">Blog</a>
+											</li>
+
+                                            <li>
+												<a href="javascript:void(0)">About Us</a>
+											</li>
+										</ul>
+					
+
+                                         <span class="navbar-form navbar-right"> 
+			
+			<span class="hidden-mobile hiddex-xs">Need an account?</span> <a href="student-signup.html" class="btn btn-info">Create account</a> 
+			</span>
+								</div><!-- /.navbar-collapse -->
+								
+							</div>
+
+					
+                        <div class="well well-lg text-center" id="header-well">
+											<h1>LICENSE AGREEMENT</h1>
+											
+						</div>					
+									
+
+		</header> 
+
+   		<div id="main" role="main">
+
+			<!-- MAIN CONTENT -->
+			<div id="content">
+
+				<div class="row">
+                   <div class="container">
+					<h2 class="text-center">1APPLICATION LICENSE AGREEMENT FOR APPLICATION FORMS</h2>
+                    
+                    <p>This License Agreement For 1Application Forms (<strong>"Agreement"</strong>) is between you (both the individual accessing or using the Forms and any single legal entity on behalf of which such individual is acting) (<strong>"You" or "Your"</strong>) and 1Application Pvt. Ltd. (<strong>"1Application"</strong>). The licenses granted under this Agreement are directed solely to students who want to use the Forms for college/university admissions in connection with their use of the 1Application web site and/or 1APP mobile application and for colleges and universities who are also members of the 1Application.</p>
+                   <br>
+                   <p>TAKING ANY STEP TO COMPLETE, ACCESS, DOWNLOAD, SUBMIT OR USE ANY 1APPLICATION(TM) FORM CONSTITUTES YOUR ASSENT TO AND ACCEPTANCE OF THIS AGREEMENT. WRITTEN OR ELECTRONIC APPROVAL IS NOT A PREREQUISITE TO THE VALIDITY OR ENFORCEABILITY OF THIS AGREEMENT AND NO SOLICITATION OF ANY SUCH WRITTEN OR ELECTRONIC APPROVAL BY OR ON BEHALF OF YOU WILL BE CONSTRUED AS AN INFERENCE TO THE CONTRARY. IF YOU HAVE COMPLETED, ACCESSED, DOWNLOADED, SUBMITTED, USED OR ORDERED ANY 1APPLICATION(TM) FORM SUCH ORDER IS CONSIDERED AN OFFER BY YOU, AND OUR ACCEPTANCE OF YOUR OFFER IS EXPRESSLY CONDITIONED ON YOUR ASSENT TO THE TERMS OF THIS AGREEMENT, TO THE EXCLUSION OF ALL OTHER TERMS. IF THESE TERMS ARE CONSIDERED AN OFFER BY 1APPLICATION, YOUR ACCEPTANCE IS EXPRESSLY LIMITED TO THE TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE WITH ALL TERMS OF THIS AGREEMENT, YOU MUST NOT ATTEMPT TO COMPLETE, ACCESS, DOWNLOAD, SUBMIT, OR USE ANY 1APPLICATION(TM) FORM.</p><br>
+
+                   <legend>1. DEFINITIONS</legend>
+                   <p>1.1 <strong>"1Application Forms"</strong> or <strong>"Forms"</strong> means our college/university admission application, instruction booklet and other related forms of 1Application in whatever media, hard copy, PDF, electronic, paper or otherwise fixed in a tangible medium of expression, however selected, coordinated or arranged, including any updates or supplements provided thereto by 1Application for which You are granted a license pursuant to this Agreement.
+                   </p>
+
+                   <legend>2. COPYRIGHT LICENSE AND OTHER CONTRACTUAL TERMS</legend>
+                   <p><strong>2.1 Limited License For Member Colleges and Universities</strong></p>
+                   <p>If You are a college or university that is also a member of the 1Application, 1Application hereby grants You a limited, non-exclusive, non-transferable license (without the right to sublicense) to (a) reproduce and distribute the 1Application Forms and (b) to display said Forms solely on Your own electronic systems. Both (a) and (b) above are also granted solely for Your own internal educational admissions operations. Under no circumstances are You granted permission to sublicense the Forms for any purpose to any third party, affiliate or vendor (other than 1Application's authorized vendor) unless specifically authorized in writing by 1Application.</p>
+
+                   <p><strong>2.2 Limited License For Students Applying For Admission</strong></p>
+                   <p>If You are a student applicant wanting to use the Forms to apply for admission to a member college or university of your choice, 1Application hereby grants You a limited, non-exclusive, non-transferable license (without the right to sublicense) to use and answer the questions of the Forms solely for this purpose and to</p><p style="background: yellow;"> electronically complete and/or electronically submit the Forms for admission solely using the 1Application web site or 1APP mobile application, or in special circumstances, to submit a completed paper hard copy of the Form to a selected member.</p>
+
+                   <p><strong>2.3 Other Restrictive Contractual Terms</strong></p>
+                   <p>Except as otherwise explicitly stated above, there is no right to alter, add to, modify or make derivative works of the Forms or to electronically complete and/or submit the Forms on any web site other than the 1Application web site and You acknowledge and agree that You have no such rights. For member colleges and universities, You are also permitted the right to use the Forms in conjunction with other works (such as using Your own application forms or questions to supplement the use of the 1Application(TM) Forms in Your admissions package) but this allowance does not grant You any additional rights that are not specifically granted herein.</p>
+
+                   <p><strong>2.4 Ownership</strong></p>
+                   <p>1Application will retain all right, title and interest in and to the copyright and any other intellectual property rights in the 1Application(TM) Forms, subject only to the limited licenses set forth in this Agreement. To the extent written permission is granted by 1Application allowing You to make an authorized alteration, addition, modification or derivative work in any 1Application Form, 1Application is hereby assigned all right, title and interest in said alteration, addition, modification, or derivative, including all of the associated intellectual property rights. You do not acquire any other rights, express or implied, in the Forms other than those rights expressly granted under this Agreement.</p>
+                   
+                    <legend>3. DISCLAIMER OF WARRANTIES</legend>
+                    <p>1APPLICATION MAKES NO REPRESENTATIONS OR WARRANTIES, EITHER EXPRESS OR IMPLIED, OF ANY KIND WITH RESPECT TO THE FORMS. THE FORMS ARE PROVIDED "AS IS" WITH NO WARRANTY. TO THE FULLEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW, 1APPLICATION EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, WITH RESPECT TO THE FORMS, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, ACCURACY, TITLE AND NON-INFRINGEMENT, AND ANY WARRANTIES THAT MAY ARISE OUT OF COURSE OF PERFORMANCE, COURSE OF DEALING, STATUTE OR USAGE OF TRADE. 1Application does not warrant that the Forms ask all the questions required of any participating college or university, that the Forms, once completed by a student applicant, will be properly or timely submitted to any designated college or university, or that the Forms are error-free.</p>
+
+                    <legend>4. TERMINATION</legend>
+                    <p>This Agreement is effective until terminated. 1Application may terminate this Agreement at any time upon Your breach of any of the provisions hereof. Upon termination of this Agreement, You will cease all use of the Forms, return to 1Application or destroy the Forms in Your possession, and so certify to 1Application, if requested. Except for the license granted herein and as expressly provided herein, the terms of this Agreement will survive termination.</p>
+
+                    <legend>5. GENERAL TERMS</legend>
+                    <p><strong>5.1 Law</strong></p>
+                    <p>This Agreement and all matters arising out of or relating to this Agreement will be governed by the laws of the Government of India. In the event of any controversy, claim or dispute between the parties arising out of or relating to this Agreement, such controversy, claim or dispute may be tried solely and exclusively by the Delhi Courts located in New Delhi, and the parties hereby irrevocably consent to the jurisdiction and venue of such courts.</p>
+
+                    <p><strong>5.2 Limitation of Liability and Indemnification</strong></p>
+                    <p>In no event will either party be liable for any indirect, incidental, special, consequential or punitive damages incurred by either party or any third party, whether in an action in contract or tort, even if the other party has been advised of the possibility of such damages or if such damages are foreseeable. In no event will 1Application be held responsible for the errors or omissions of any licensee of the Forms nor shall 1Application be liable for any claims or causes of action arising from any works or products that incorporate the Forms. In no event will liability for damages under this Agreement exceed the amounts paid by You for the Forms. If the Forms are incorporated into or used in conjunction with other works or products, You agree to indemnify and hold harmless 1Application from any claims or causes of action (be it claims for infringement or otherwise) that arise from Your products or works that incorporate or are used in conjunction with the Forms.</p>
+
+                    <p><strong>5.3 Severability and Waiver</strong></p>
+                    <p>If any provision of this Agreement is held to be illegal, invalid or otherwise unenforceable, such provision will be enforced to the extent possible consistent with the stated intention of the parties, or, if incapable of such enforcement, will be deemed to be severed and deleted from this Agreement, while the remainder of this Agreement will continue in full force and effect. The waiver by either party of any default or breach of this Agreement will not constitute a waiver of any other or subsequent default or breach.</p>
+
+                    <p><strong>5.4 No Assignment</strong></p>
+                    <p>You may not assign, sell, transfer, delegate or otherwise dispose of, whether voluntarily or involuntarily, by operation of law or otherwise, this Agreement or any rights or obligations under this Agreement without the prior written consent of 1Application. Any purported assignment, transfer or delegation by You will be null and void. Subject to the foregoing, this Agreement will be binding upon and will inure to the benefit of the parties and their respective successors and assigns.</p>
+
+                    <p><strong>5.5 Entire Agreement</strong></p>
+                    <p>This Agreement constitutes the entire agreement between the parties with respect to its subject matter and this Agreement supersedes all prior or contemporaneous agreements, representations, or understandings, written or oral, explicit or implied, concerning the subject matter of this Agreement. This Agreement may not be modified or amended except in a writing signed by a duly authorized representative of each party; no other act, document, usage or custom will be deemed to amend or modify this Agreement. It is expressly agreed that the terms of this Agreement will supersede the terms of any of Your purchase orders or other ordering documents.</p>
+
+                    </div>   
+				</div>
+			</div>
+
+		</div> 
+     <div id="footer">
+           <div class="row">
+             <div class="col-xs-12 col-sm-4" style="text-align: center;">
+            <h5><strong>1Application</strong></h5>
+              </div> 
+
+              <div class="col-xs-12 col-sm-4" style="vertical-align:middle;">
+                        
+							<ul id="social">
+								
+									<a title="Facebook" href="#"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></a>
+									<a title="Twitter" href="#"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></a>
+									<a title="Instagram" href="#"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x"></i></span></a>
+									<a title="Linkedin" href="#"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x"></i></span></a>
+									<a title="Youtube" href="#"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-youtube-square fa-stack-1x"></i></span></a>
+								
+							</ul>
+						</div>
+              <div class="col-xs-12 col-sm-4">
+                <ul class="list-inline" id="footer-menu">
+											<li class="active">
+												<a href="contact.html">Contact</a>
+											</li>
+						
+											<li>
+												<a href="license.html">License</a>
+											</li>
+
+                                            <li>
+												<a href="privacy.html">Privacy</a>
+											</li>
+
+                                            <li>
+												<a href="terms.html">Terms</a>
+											</li>
+
+				</ul>
+              </div>
+                 
+           </div>
+			<div class="row">	
+              <div class="col-xs-12">
+                  <h6 style="text-align: center;">1Application - © Copyright 2016 All Rights Reserved</h6> 
+              </div>      
+		    </div>
+          
+		</div>
+
+		<!--================================================== -->	
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<script src="js/plugin/pace/pace.min.js"></script>
+
+	    <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script> if (!window.jQuery) { document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');} </script>
+
+	    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script> if (!window.jQuery.ui) { document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');} </script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="js/app.config.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events 		
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+
+		<!-- BOOTSTRAP JS -->		
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+		
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+		
+		<!--[if IE 8]>
+			
+			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+			
+		<![endif]-->
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.min.js"></script>
+
+		<script type="text/javascript">
+		</script>
+
+	</body>
+</html>

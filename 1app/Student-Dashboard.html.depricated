@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title> 1Application </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+
+		<!-- SmartAdmin RTL Support -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> 
+
+		<link rel="stylesheet" type="text/css" media="screen" href="css/custom_style.css"> 
+
+		<!-- #FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon-1app.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon-1app.ico" type="image/x-icon">
+
+		<!-- #GOOGLE FONT -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+		<!-- #APP SCREEN / ICONS -->
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+		<!-- jquery dialog rwg 12.4 -->
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+		<script src="js/sck-wg.js"></script>
+
+	</head>
+	
+	<!-- #BODY -->
+	<!-- Possible Classes
+
+		* 'smart-style-{SKIN#}'
+		* 'smart-rtl'         - Switch theme mode to RTL
+		* 'menu-on-top'       - Switch to top navigation (no DOM change required)
+		* 'no-menu'			  - Hides the menu completely
+		* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+		* 'fixed-header'      - Fixes the header
+		* 'fixed-navigation'  - Fixes the main menu
+		* 'fixed-ribbon'      - Fixes breadcrumb
+		* 'fixed-page-footer' - Fixes footer
+		* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+	-->
+	<body onLoad="checkCookie()">
+
+		<!-- #HEADER -->
+		<header id="header">
+			<div id="logo-group">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo"> <img src="img/Logo.png" alt="1Application"> </span>
+				<!-- END LOGO PLACEHOLDER -->
+			</div>
+
+			<!-- #TOGGLE LAYOUT BUTTONS -->
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+				
+				<!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+				
+				<!-- #MOBILE -->
+				<!-- Top menu profile link : this shows only when top menu is active -->
+				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+					<li class="">
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
+							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<!-- logout button -->
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a title="Log Out"><i class="fa fa-sign-out"></i></a> </span>
+				</div>
+				<!-- end logout button -->
+
+				<!-- fullscreen button -->
+				<div id="fullscreen" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+				</div>
+				<!-- end fullscreen button -->
+				
+			</div>
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- END HEADER -->
+
+		<!-- #NAVIGATION -->
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel">
+
+			<!-- User info -->
+			<div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+					
+						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<span id="username_head">
+							
+						</span>
+				</span>
+			</div>
+			<!-- end user info -->
+
+			<nav>
+				<!-- 
+				NOTE: Notice the gaps after each icon usage <i></i>..
+				Please note that these links work a bit different than
+				traditional href="" links. See documentation for details.
+				-->
+
+				<ul>
+					<li class="active">
+						<a href="#" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Profile Management</span></a>
+                     <ul>
+							<li>
+								<a href="Student-Profile.html" title="Profile"><span class="menu-item-parent">Profile</span></a>
+							</li>
+							<li>
+								<a href="Student-family.html" title="Family"><span class="menu-item-parent">Family</span></a>
+							</li>
+                            <li>
+								<a href="Student-education.html" title="Education"><span class="menu-item-parent">Education</span></a>
+							</li>
+                            <li>
+								<a href="Student-testing.html" title="Testing"><span class="menu-item-parent">Testing</span></a>
+							</li>
+                            <li>
+								<a href="Student-docupload.html" title="Doc Upload"><span class="menu-item-parent">Document Upload</span></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="Student-search.html"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Advanced Search</span></a>
+					</li>
+				</ul>
+			</nav>
+			
+
+			<span class="minifyme" data-action="minifyMenu"> 
+				<i class="fa fa-arrow-circle-left hit"></i> 
+			</span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+
+				<!-- breadcrumb -->
+				<ol class="breadcrumb">
+					
+				</ol>
+				<!-- end breadcrumb -->
+
+				<!-- You can also add more buttons to the
+				ribbon for further usability
+
+				Example below:
+
+				<span class="ribbon-button-alignment pull-right">
+				<span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+				<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+				<span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+				</span> -->
+
+			</div>
+			<!-- END RIBBON -->
+			
+			
+
+			<!-- MAIN CONTENT -->
+			<div id="content">
+
+				<!-- row -->
+				<div class="row">
+					
+					<!-- col -->
+					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+						<h1 class="page-title txt-color-blueDark">
+							
+							Student Dashboard
+								
+						</h1>
+					</div>
+					<!-- end col -->
+					
+				</div>
+				<!-- end row -->
+				
+				<!--
+					The ID "widget-grid" will start to initialize all widgets below 
+					You do not need to use widgets if you dont want to. Simply remove 
+					the <section></section> and you can use wells or panels instead 
+					-->
+				
+				<!-- widget grid -->
+				<section id="widget-grid" class="">
+				
+					<!-- row -->
+					<div class="row">
+						
+						<!-- NEW WIDGET START -->
+						<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				
+				                        <table id="jqgrid"></table>
+				                        <div id="pjqgrid"></div>
+										<br>
+										<br>
+										<table id="jqgridprocessed"></table>
+				                        <div id="pjqgridprocessed"></div>
+							<div id="dialog-confirm">
+							<!--<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+							Clicking Yes will take you to make payment. Are you sure?</p>-->
+							<span id="rpay_payment_details">
+                           </span>
+							</div>
+						</article>
+						<!-- WIDGET END -->
+						
+					</div>
+                    
+				    
+					<!-- end row -->
+				
+				</section>
+				<!-- end widget grid -->
+
+			</div>
+			<!-- END MAIN CONTENT -->
+
+		</div>
+		<!-- END MAIN PANEL -->
+
+		<!-- PAGE FOOTER -->
+		<div class="page-footer">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="float: none; ">
+					<span class="txt-color-white">1Application © 2016</span>
+				</div>
+
+				
+			</div>
+		</div>
+		<!-- END PAGE FOOTER -->
+
+		<!--================================================== -->
+
+		<script>
+           window.paceOptions = {
+              ajax: {
+                 trackMethods: ['GET', 'POST', 'PUT', 'DELETE', 'REMOVE']
+              }   
+            };
+         </script>
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+        <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+			}
+		</script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+			}
+		</script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="js/app.config.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+
+		<!-- BOOTSTRAP JS -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="js/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices -->
+		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+
+		<!--[if IE 8]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.min.js"></script>
+
+		<!-- PAGE RELATED PLUGIN(S) -->
+        <script src="js/plugin/jqgrid/jquery.jqGrid.min.js"></script>
+		<script src="js/plugin/jqgrid/grid.locale-en.min.js"></script>
+
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+				/*var user_id = getCookie("userid");
+				if(user_id===""){
+					console.log("No User Logged in");
+					window.location.assign("login.html")
+				}
+				console.log(getCookie("userfirstname"));*/
+				$("#username_head").text(getCookie("userfirstname"));
+			 	
+				/* DO NOT REMOVE : GLOBAL FUNCTIONS!
+				 *
+				 * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
+				 *
+				 * // activate tooltips
+				 * $("[rel=tooltip]").tooltip();
+				 *
+				 * // activate popovers
+				 * $("[rel=popover]").popover();
+				 *
+				 * // activate popovers with hover states
+				 * $("[rel=popover-hover]").popover({ trigger: "hover" });
+				 *
+				 * // activate inline charts
+				 * runAllCharts();
+				 *
+				 * // setup widgets
+				 * setup_widgets_desktop();
+				 *
+				 * // run form elements
+				 * runAllForms();
+				 *
+				 ********************************
+				 *
+				 * pageSetUp() is needed whenever you load a page.
+				 * It initializes and checks for all basic elements of the page
+				 * and makes rendering easier.
+				 *
+				 */
+				
+				 pageSetUp();
+				 
+				 var user_id = getCookie("userid");
+                 
+                 <!-- Ajax call for Logout - Start -->
+
+                    $('#logout').click(function() {
+
+                     $.ajax({
+                     type: 'POST',
+                     url: get_endpoint() + "oneapplication/user/logout/" + user_id, 
+                     contentType:"application/json",
+                     datatype : "json",
+                     success: function (data) {
+                      alert(data.message);
+                      if(data.status == "SUCCESS") {
+                        eraseCookie("userid");
+                        eraseCookie("username");
+                        eraseCookie("userfirstname");
+                        eraseCookie("userrole");
+                        location.href = "login.html";
+                        } // End If
+
+                       else if (data.status == "FAILURE") {
+                                              
+                      } // End Else If
+
+                      }, // End Success Call
+
+                        error: function (data, textStatus, errorThrown) { //In case of error
+                         alert(errorThrown);
+                     }
+                   
+                     }); // End Ajax Call
+                        
+                    }); // End Click function
+           
+                 <!-- Ajax call for Logout - End -->
+				 
+				 /****** Addd Code to Show only interested Colleges ***/
+				 jQuery("#jqgrid").jqGrid({
+                    			datatype : "local",
+					height : 'auto',
+                   // width : 'auto',
+					colModel : [
+						    {name : 'ID',index : 'id',width : "20%",align : 'center'}, 
+						    {name : 'College Name',index : 'name',width : "75%",editable : true}, 
+						    {name : 'Application Fee',index : 'fee',width : "25%",editable : true},
+							{name : 'Apply For Course',index : 'applyCourse',width : "30%",editable : true},						
+						    {name : 'Status',index : 'status',width : "25%",editable : true}],
+                    			rowNum : 10,
+					rowList : [10, 20, 30],
+					pager : '#pjqgrid',
+					sortname : 'id',
+					toolbarfilter : true,
+					viewrecords : true,
+					sortorder : "asc",
+					editurl : get_endpoint() + "oneapplication/secure/student/add/colleges",
+					caption : "Institutes to be processed",
+					caption : "Institutes to be processed",
+					multiselect : true,
+					gridview: true,
+			                autowidth : true,
+			                shrinkToFit : true,
+			                rowattr: function (item) {
+			                    	console.log(item);
+                    				if (item.Status === "APPLIED") {
+		    					//jQuery("#jqg_jqgrid_"+ rowId).attr("ui-state-disabled", true);
+        						return {"class": "ui-state-disabled ui-jqgrid-disablePointerEvents"};
+    						}
+		    			},
+		    
+		    		        beforeSelectRow: function (rowid, e) {
+					    	console.log(rowid);
+		    				console.log($('#jqgrid').getRowData(rowid).Status);
+					    	console.log(e);
+		    	
+		    				if ($('#jqgrid').getRowData(rowid).Status === "APPLIED") {
+					    	
+		    					console.log("returning false");
+		    					console.log("Setting Row Disabled: "+ rowId);
+		    					jQuery("#jqg_jqgrid_"+ rowid).attr("hidden", true);
+		        				return false;   // not allow select the row
+		    					}
+		    					else {
+		    	
+		    					console.log("returning true");
+		    					return true;    // allow select the row
+		    					}
+					}
+    				}); // End jqGrid
+    				
+    				/*  Define a custom Function for Add (+) button in jqGrid **/
+    				
+    				function applyToCollege() { 
+					   	console.log("Add Button Clicked");
+						 /***** Add Action Code for Add button here *****/
+						 //console.log("Add Button Clicked");
+						var $grid = $("#jqgrid");
+						var selIds = $grid.jqGrid("getGridParam", "selarrrow");
+						console.log(selIds.length);
+						if(!selIds.length) {
+							alert("Please select a college to apply");
+							return;
+						}
+						var i, n, cellValues = []; var oneAppTxnId,totalAmount;
+						var courseIds = [];
+						for (i = 0, n = selIds.length; i < n; i++) {
+						    cellValues.push($grid.jqGrid("getCell", selIds[i], "ID"));
+							//var dropdown = jQuery('#courseSelect'+cellValues[i])[selIds[i]];
+							//var selectedOption = dropdown.options[dropdown.selectedIndex];
+							//var selectedText = selectedOption.value; 
+							//var cId = $('#courseSelect'+cellValues[i]).val();
+							//courseIds.push($grid.jqGrid("getCell", selIds[i], "Apply For Course"));
+							var cId = $("#courseSelect"+cellValues[i]+" option:selected").val();
+							courseIds.push(cId);
+						}
+						console.log(cellValues.join(","));
+						console.log(courseIds.join(","));
+						var userId = getCookie("userid");
+						console.log(userId);
+                         			var collegeadddata = { "userId":userId, "collegeIds": cellValues, "courseIds": courseIds }
+                         			console.log(collegeadddata);
+		 	              		$.ajax({
+                    					type: 'POST', 
+		                    			url: get_endpoint() + "oneapplication/secure/student/pay", 
+		                    			contentType:"application/json",
+		                    			datatype : "json",
+				            		    data: JSON.stringify(collegeadddata),
+		                    			success: function (data) {
+			                   			if(data.status == "SUCCESS") {
+									console.log(data.message);
+									oneAppTxnId = data.responseData.oneappTxnId;totalAmount = data.responseData.totalAmount;
+									console.log("TxnId: " + data.responseData.oneappTxnId);
+									console.log("totalAmount: " + data.responseData.totalAmount);
+									console.log("oneappChargedAmount: " + data.responseData.oneAppChargedAmount);
+									console.log("totalTaxAmount: " + data.responseData.totalTaxAmount);
+									console.log("razorPayServiceCharge: " + data.responseData.razorPayServiceCharge);
+									/*confirm("Total Amount: "+data.responseData.totalAmount+"\n"+
+												"1App Charges: "+data.responseData.oneAppChargedAmount+"\n"+
+												"Tax: "+data.responseData.totalTaxAmount+"\n"+
+												"razorPay Service Charge: "+data.responseData.razorPayServiceCharge+"\n"+
+												"Application Fee:" + (data.responseData.totalAmount - data.responseData.oneAppChargedAmount - data.responseData.totalTaxAmount - data.responseData.razorPayServiceCharge));*/
+
+                                    /* $('#rpay_payment_details').addClass("dialog-head");
+									
+									$('#rpay_payment_details').html("<strong>Total Amount: "+ data.responseData.totalAmount+"</strong><br/>"+
+												"1App Charges: "+data.responseData.oneAppChargedAmount+"<br/>"+
+												"Tax: "+data.responseData.totalTaxAmount+"<br/>"+
+												"Razorpay Service Charge: "+data.responseData.razorPayServiceCharge+"<br/>"+
+												"Application Fee: " + (data.responseData.totalAmount - data.responseData.oneAppChargedAmount - data.responseData.totalTaxAmount - data.responseData.razorPayServiceCharge));  */
+                                      $('#rpay_payment_details').empty();
+                                      $('<img width="200" src="img/Logo.png" class="img-responsive">').prependTo("#rpay_payment_details");
+                                      $('#rpay_payment_details').append('<table></table>');
+                                      $('#rpay_payment_details table').addClass("table table-bordered");
+                                      
+                                      var table = $('#rpay_payment_details:last-child').children().last();
+                                      
+                                      table.append("<thead><tr><th>Description</th><th>Amount</th></tr></thead>");
+                                      table.append("<tbody><tr><td>1App Charges</td><td>"+data.responseData.oneAppChargedAmount+"</td></tr><tr><td>Tax</td><td>"+data.responseData.totalTaxAmount+"</td></tr><tr><td>Razorpay Service Charge</td><td>"+data.responseData.razorPayServiceCharge+"</td></tr><tr><td>Application Fee</td><td>"+(data.responseData.totalAmount - data.responseData.oneAppChargedAmount - data.responseData.totalTaxAmount - data.responseData.razorPayServiceCharge)+"</td></tr><tr><td>Total Amount</td><td>"+data.responseData.totalAmount+"</td></tr></tbody>");
+                                      
+									
+									  $(function() {
+										$( "#dialog-confirm" ).dialog({
+										  title:"Confirm Payment",
+										  resizable: false,
+                                          width: 'auto',
+										  modal: true,
+										  buttons: {
+											"Pay?": function() {
+											  $( this ).dialog( "close" );
+												
+												console.log("this dialog closed");
+												var options = {
+												"key": get_rzpKey(),//"rzp_test_X93svoEjW6T4LJ", 
+												"amount": (totalAmount*100), // 2000 paise = INR 20 //pay_5BzaYHPYPQmfex
+												"name": "1Application",
+												"description": "Purchase Description",
+												"image": "img/Logo.png",
+												"handler": function (response){
+												alert(response.razorpay_payment_id + "--"+oneAppTxnId+"--"+totalAmount*100);
+												$.ajax({
+				                    					type: 'PUT', 
+						                    			url: get_endpoint() + "oneapplication/secure/student/pay", 
+						                    			contentType:"application/json",
+						                    			datatype : "json",
+								            		data: JSON.stringify({"oneAppTxnId": oneAppTxnId, 
+								            			"razorpayTxnId":response.razorpay_payment_id,
+								            			"txnAmount":(totalAmount*100)}),//rpay takes paise only
+						                    			success: function (data) {
+							                   			if(data.status == "SUCCESS") {
+							                   				console.log(data.message);
+													console.log("Id: " + data.responseData.id);
+													console.log("Entity: " + data.responseData.entity);
+													console.log("totalAmount: " + data.responseData.amount);
+													console.log("currency: " + data.responseData.currency);
+													console.log("Status: " + data.responseData.status);
+													console.log("email: " + data.responseData.email);
+													console.log("contact: " + data.responseData.contact);
+													console.log("notes: " + JSON.stringify(data.responseData.notes));
+													/************** Test Code to check colleges added ******************/
+													jQuery('#jqgrid').jqGrid('clearGridData');
+													$.ajax({
+													type: 'GET', 
+													url: get_endpoint() + "oneapplication/secure/student/fetch/colleges/"+user_id, 
+													contentType:"application/json",
+													success: function (data) {
+													if(data.status == "SUCCESS") {
+														console.log(data.responseData);
+														var curprocessedrow = 0;
+														var curnonprocessedrow = 0;
+														for (i = 0; i < data.responseData.length; ++i) {
+														console.log(data.responseData[i]);
+														if(data.responseData[i].appliedStatus ==="NOT APPLIED") {
+															console.log('appending '+data.responseData[i].id+ ' '+data.responseData[i].collegeName + data.responseData[i].courses[0].courseDisplayName+ data.responseData[i].appliedStatus +"to institutes to be processed");
+															mydata[i] = {ID:data.responseData[i].id,'College Name':data.responseData[i].collegeName, 'Apply For Course':data.responseData[i].courses[0].courseDisplayName,'Application Fee':data.responseData[i].applicationFee, Status:data.responseData[i].appliedStatus};
+															jQuery("#jqgrid").jqGrid('addRowData', curnonprocessedrow++, mydata[i]);
+														}
+														else {
+															console.log('appending '+data.responseData.interestedColleges[i].id+ ' '+data.responseData.interestedColleges[i].collegeName + "processed Institutions");
+															mydata[i] = {ID:data.responseData[i].id,'College Name':data.responseData[i].collegeName, 'Application Fee':data.responseData[i].applicationFee, 'Apply For Course':data.responseData[i].courses[0].courseDisplayName, Status:data.responseData[i].appliedStatus};
+															jQuery("#jqgridprocessed").jqGrid('addRowData', curprocessedrow++, mydata[i]);
+														}
+												}
+												   } // End If
+													  else if (data.status == "FAILURE") {
+													  console.log("Could not fetch Student College detail. Please try reloading the page");
+													  } // End Else If
+												   },
+													 error: function (data, textStatus, errorThrown) { //In case of error
+															console.log("Error getting States");
+													 }
+													});
+													/***************Test code end to check colleges ********************/
+							                   			}
+							                   			else if (data.status == "FAILURE") {
+									  				alert("Could not fetch razorpay payment detail. Please try reloading the page");
+				                      						} // End Else If
+							                   		},
+							                   		error: function (data, textStatus, errorThrown) { //In case of error
+			                     							alert(errorThrown);
+			                     						}
+							                   	});
+									    },
+									    "prefill": {
+									        "name": "Your Name",
+									        "email": "name@yourmail.com"
+									    },
+									    "notes": {
+									        "address": "Hello World"
+									    },
+									    "theme": {
+									        "color": "#34ad99"
+									    }
+									};
+									console.log("creating RazorPay");
+									var rzp1 = new Razorpay(options);
+									console.log("RazorPay created");
+									rzp1.open();
+									console.log("RazorPay open called");
+											},
+											Cancel: function() {
+											  $( this ).dialog( "close" );
+											}
+										  }
+										});
+									  });
+												                   			} // End If
+				                      		else if (data.status == "FAILURE") {
+									  alert("Could not fetch payment detail. Please try reloading the page");
+				                      		} // End Else If
+			                   		},
+			                     		error: function (data, textStatus, errorThrown) { //In case of error
+			                     			alert(errorThrown);
+			                     		}
+	                    		        });
+					   }
+					   
+				
+				$("#jqgrid").navGrid("#pjqgrid", {add: true, edit: false, search: false, view: false, del: false, addfunc: applyToCollege, addtext: 'Apply', addtitle:""});
+				$("#jqgrid").jqGrid("inlineNav", "#pjqgrid", {add: false, edit: false, save: false, cancel: false});
+				 /****** End of code for applied colleges*****/
+				/****** Addd Code to Show only processed Colleges ***/
+				 jQuery("#jqgridprocessed").jqGrid({
+                    			datatype : "local",
+					height : 'auto',
+                   // width : 'auto',
+					colModel : [
+						    {name : 'ID',index : 'id',width : "20%",align : 'center'}, 
+						    {name : 'College Name',index : 'name',width : "60%",editable : true}, 
+							{name : 'Applied For Course',index : 'appliedCourse',width : "60%",editable : true}, 
+						    {name : 'Application Fee',index : 'fee',width : "25%",editable : true}
+							], 
+                    			rowNum : 10,
+					rowList : [10, 20, 30],
+					pager : '#pjqgridprocessed',
+					sortname : 'id',
+					toolbarfilter : true,
+					viewrecords : true,
+					sortorder : "asc",
+					editurl : get_endpoint() + "oneapplication/secure/student/add/colleges",
+					caption : "Processed Institutions",
+					caption : "Processed Institutions",
+					multiselect : true,
+					gridview: true,
+			                autowidth : true,
+			                shrinkToFit : true,
+    				}); // End jqGridprocessed
+				$("#jqgridprocessed").navGrid("#pjqgridprocessed", {add: false, edit: false, search: false, view: false, del: false});
+				$("#jqgridprocessed").jqGrid("inlineNav", "#pjqgridprocessed", {add: false, edit: false, save: false, cancel: false});
+
+				/**** Now do ajax call to get data and update jqgrid***/
+				console.log("Calling Ajax");
+				var mydata = [];
+				jQuery('#jqgrid').jqGrid('clearGridData');
+				$.ajax({
+		                    type: 'GET', 
+		                    url: get_endpoint() + "oneapplication/secure/student/fetch/colleges/"+user_id, 
+		                    contentType:"application/json",
+		                    success: function (data) {
+		                    console.log("ajax success");
+		                   	if(data.status == "SUCCESS") {
+		                   		console.log("ajax data status success");
+		                   		console.log(data.responseData);
+								//var curprocessedrow = 0;
+								//var curnonprocessedrow = 0;
+		                   		for (i = 0; i < data.responseData.length; ++i) {
+								console.log(data.responseData[i]);
+								//if(data.responseData[i].appliedStatus ==="NOT APPLIED") {
+									console.log('appending '+data.responseData[i].id+ ' '+data.responseData[i].collegeName + data.responseData[i].appliedStatus +"to institutes to be processed");
+									var str = '<select id="courseSelect'+data.responseData[i].id+'">';
+									for(j=0;j<data.responseData[i].courses.length; j++){
+										str += '<option value='+data.responseData[i].courses[j].id+'>'+data.responseData[i].courses[j].courseDisplayName+'</option>';
+									}
+									str += '</select>';
+									mydata[i] = {ID:data.responseData[i].id,'College Name':data.responseData[i].collegeName, 'Apply For Course':str, 'Application Fee':data.responseData[i].applicationFee, Status:data.responseData[i].appliedStatus};
+									jQuery("#jqgrid").jqGrid('addRowData', i, mydata[i]);
+								/*}
+								else {
+									console.log('appending '+data.responseData.interestedColleges[i].id+ ' '+data.responseData.interestedColleges[i].collegeName + "processed Institutions");
+									mydata[i] = {ID:data.responseData[i].id,'College Name':data.responseData[i].collegeName, 'Application Fee':data.responseData[i].applicationFee, Status:data.responseData[i].appliedStatus};
+									jQuery("#jqgridprocessed").jqGrid('addRowData', curprocessedrow++, mydata[i]);
+								}*/
+						}
+		                   } // End If
+		                      else if (data.status == "FAILURE") {
+							  console.log("Could not fetch Student College detail. Please try reloading the page");
+		                      } // End Else If
+		                   },
+		                     error: function (data, textStatus, errorThrown) { //In case of error
+		                     		console.log("Error getting States");
+		                     }
+		                    });
+							
+							/* Add Applied Colleges */
+											$.ajax({
+		                    type: 'GET', 
+		                    url: get_endpoint() + "oneapplication/secure/student/fetch/colleges/applied/"+user_id, 
+		                    contentType:"application/json",
+		                    success: function (data) {
+		                    console.log("ajax success");
+		                   	if(data.status == "SUCCESS") {
+		                   		console.log("ajax data status success");
+		                   		console.log(data.responseData);
+								//var curprocessedrow = 0;
+								//var curnonprocessedrow = 0;
+		                   		for (i = 0; i < data.responseData.length; ++i) {
+								console.log(data.responseData[i]);
+								/*if(data.responseData[i].appliedStatus ==="NOT APPLIED") {
+									console.log('appending '+data.responseData[i].id+ ' '+data.responseData[i].collegeName + data.responseData[i].appliedStatus +"to institutes to be processed");
+									mydata[i] = {ID:data.responseData[i].id,'College Name':data.responseData[i].collegeName, 'Application Fee':data.responseData[i].applicationFee, Status:data.responseData[i].appliedStatus};
+									jQuery("#jqgrid").jqGrid('addRowData', curnonprocessedrow++, mydata[i]);
+								}
+								else {*/
+									console.log('appending '+data.responseData[i].id+ ' '+data.responseData[i].collegeName + data.responseData[i].course.courseDisplayName +"processed Institutions");
+									mydata[i] = {ID:data.responseData[i].id,'College Name':data.responseData[i].collegeName, 'Applied For Course': data.responseData[i].course.courseDisplayName, 'Application Fee':data.responseData[i].applicationFee};
+									jQuery("#jqgridprocessed").jqGrid('addRowData', i, mydata[i]);
+								//}
+								}
+		                   } // End If
+		                      else if (data.status == "FAILURE") {
+							  console.log("Could not fetch Student College detail. Please try reloading the page");
+		                      } // End Else If
+		                   },
+		                     error: function (data, textStatus, errorThrown) { //In case of error
+		                     		console.log("Error getting States");
+		                     }
+		                    });
+                    
+							/* End of Add Applied Colleges */
+				/* Add tooltips */
+				$('.navtable .ui-pg-button').tooltip({
+					container : 'body'
+				});
+
+				jQuery("#m1").click(function() {
+					var s;
+					s = jQuery("#jqgrid").jqGrid('getGridParam', 'selarrrow');
+					alert(s);
+				});
+				jQuery("#m1s").click(function() {
+					jQuery("#jqgrid").jqGrid('setSelection', "13");
+				});
+
+				// remove classes
+				$(".ui-jqgrid").removeClass("ui-widget ui-widget-content");
+				$(".ui-jqgrid-view").children().removeClass("ui-widget-header ui-state-default");
+				$(".ui-jqgrid-labels, .ui-search-toolbar").children().removeClass("ui-state-default ui-th-column ui-th-ltr");
+				$(".ui-jqgrid-pager").removeClass("ui-state-default");
+				$(".ui-jqgrid").removeClass("ui-widget-content");
+				$("#add_jqgrid").removeClass("ui-state-hover");
+
+				// add classes
+				$(".ui-jqgrid-htable").addClass("table table-bordered table-hover");
+				$(".ui-jqgrid-btable").addClass("table table-bordered table-striped");
+
+				$(".ui-pg-div").removeClass().addClass("btn btn-sm btn-primary");
+				$(".ui-icon.ui-icon-plus").removeClass().addClass("fa fa-plus");
+				$(".ui-icon.ui-icon-pencil").removeClass().addClass("fa fa-pencil");
+				$(".ui-icon.ui-icon-trash").removeClass().addClass("fa fa-trash-o");
+				$(".ui-icon.ui-icon-search").removeClass().addClass("fa fa-search");
+				$(".ui-icon.ui-icon-refresh").removeClass().addClass("fa fa-refresh");
+				$(".ui-icon.ui-icon-disk").removeClass().addClass("fa fa-save").parent(".btn-primary").removeClass("btn-primary").addClass("btn-success");
+				$(".ui-icon.ui-icon-cancel").removeClass().addClass("fa fa-times").parent(".btn-primary").removeClass("btn-primary").addClass("btn-danger");
+
+				$(".ui-icon.ui-icon-seek-prev").wrap("<div class='btn btn-sm btn-default'></div>");
+				$(".ui-icon.ui-icon-seek-prev").removeClass().addClass("fa fa-backward");
+
+				$(".ui-icon.ui-icon-seek-first").wrap("<div class='btn btn-sm btn-default'></div>");
+				$(".ui-icon.ui-icon-seek-first").removeClass().addClass("fa fa-fast-backward");
+
+				$(".ui-icon.ui-icon-seek-next").wrap("<div class='btn btn-sm btn-default'></div>");
+				$(".ui-icon.ui-icon-seek-next").removeClass().addClass("fa fa-forward");
+
+				$(".ui-icon.ui-icon-seek-end").wrap("<div class='btn btn-sm btn-default'></div>");
+				$(".ui-icon.ui-icon-seek-end").removeClass().addClass("fa fa-fast-forward");
+
+			})
+
+			$(window).on('resize.jqGrid', function() {
+				$("#jqgrid").jqGrid('setGridWidth', $("#content").width());
+			})
+
+           /* var tgtCol = $('td[aria-describedby=jqgrid_cb]');
+            tgtCol.attr('width' , '50px'); */
+		
+		</script>
+
+
+
+
+
+
+
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+				_gaq.push(['_trackPageview']);
+			
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+
+	</body>
+
+</html>
