@@ -1,0 +1,36 @@
+# Site settings
+title: Soham Mukherjee
+description: 'Business Card Page'
+url: 'https://sohammukherjee.com'
+baseurl: ''
+profilepic: '/images/ProfilePhoto.jpg'
+bkimage: '/images/bk1.jpg'
+google_analytics: UA-201423089-2
+font_awesome: '36d46a37a5.js'
+
+author:
+  name: 'Soham Mukherjee'
+  email: mukherjeesoham@outlook.com
+#  twitter_username: sohammukherjee
+#  facebook_username: sohammukherjee
+  github_username:  1337PaladinS
+  linkedin_username:  soham-mukherjee
+#  meetup_name: Azure-Meetup-Rostock-MV
+
+# Build settings
+destination: _site
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+#plugins: ['jekyll-paginate']
+exclude: ['README.md']
