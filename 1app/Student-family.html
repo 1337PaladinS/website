@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title> 1Application </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+
+		<!-- SmartAdmin RTL Support -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> 
+
+		<link rel="stylesheet" type="text/css" media="screen" href="css/custom_style.css">
+
+		<!-- #FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon-1app.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon-1app.ico" type="image/x-icon">
+
+		<!-- #GOOGLE FONT -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+       
+		<!-- #APP SCREEN / ICONS -->
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+        <script src="js/sck-wg.js"></script>
+
+	</head>
+	
+	<!-- #BODY -->
+	<!-- Possible Classes
+
+		* 'smart-style-{SKIN#}'
+		* 'smart-rtl'         - Switch theme mode to RTL
+		* 'menu-on-top'       - Switch to top navigation (no DOM change required)
+		* 'no-menu'			  - Hides the menu completely
+		* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+		* 'fixed-header'      - Fixes the header
+		* 'fixed-navigation'  - Fixes the main menu
+		* 'fixed-ribbon'      - Fixes breadcrumb
+		* 'fixed-page-footer' - Fixes footer
+		* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+	-->
+	<body onLoad="checkCookie()">
+       <div class="scroll-top-wrapper">
+       <span class="scroll-top-inner">
+         <i class="fa fa-2x fa-arrow-circle-up"></i>
+       </span>
+     </div>
+		<!-- #HEADER -->
+		<header id="header">
+			<div id="logo-group">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo"> <img src="img/Logo.png" alt="1Application"> </span>
+				<!-- END LOGO PLACEHOLDER -->
+			</div>
+
+			<!-- #TOGGLE LAYOUT BUTTONS -->
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+				
+				<!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+				
+				<!-- #MOBILE -->
+				<!-- Top menu profile link : this shows only when top menu is active -->
+				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+					<li class="">
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
+							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<!-- logout button -->
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a title="Log Out"><i class="fa fa-sign-out"></i></a> </span>
+				</div>
+				<!-- end logout button -->
+				
+
+				<!-- fullscreen button -->
+				<div id="fullscreen" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+				</div>
+				<!-- end fullscreen button -->
+
+			</div>
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- END HEADER -->
+
+		<!-- #NAVIGATION -->
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel">
+
+			<!-- User info -->
+			<div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+					
+						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<span id="username_head">
+							
+						</span>	
+					
+				</span>
+			</div>
+			<!-- end user info -->
+
+			<nav>
+				<!-- 
+				NOTE: Notice the gaps after each icon usage <i></i>..
+				Please note that these links work a bit different than
+				traditional href="" links. See documentation for details.
+				-->
+
+				<ul>
+					<li>
+						<a href="Student-Dashboard.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+					</li>
+					<li class="active">
+						<a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Profile Management</span></a>
+                     <ul>
+							<li>
+								<a href="Student-Profile.html" title="Profile"><span class="menu-item-parent">Profile</span></a>
+							</li>
+							<li class="active">
+								<a href="#" title="Family"><span class="menu-item-parent">Family</span></a>
+							</li>
+                            <li>
+								<a href="Student-education.html" title="Education"><span class="menu-item-parent">Education</span></a>
+							</li>
+                            <li>
+								<a href="Student-testing.html" title="Testing"><span class="menu-item-parent">Testing</span></a>
+							</li>
+                            <li>
+								<a href="Student-docupload.html" title="Doc Upload"><span class="menu-item-parent">Document Upload</span></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="Student-search.html"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Advanced Search</span></a>
+					</li><li>
+						<a href="ChangePassword.html"><i class="fa fa-lg fa-fw fa-key"></i> <span class="menu-item-parent">Change Password</span></a>
+					</li>
+				</ul>
+			</nav>
+			
+
+			<span class="minifyme" data-action="minifyMenu"> 
+				<i class="fa fa-arrow-circle-left hit"></i> 
+			</span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+
+				<!-- breadcrumb -->
+				<ol class="breadcrumb">
+					
+				</ol>
+				<!-- end breadcrumb -->
+
+			</div>
+			<!-- END RIBBON -->
+			
+			
+
+			<!-- MAIN CONTENT -->
+			<div id="content">
+
+				<!-- row -->
+				<div class="row">
+					
+					<!-- col -->
+					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+						<h1 class="page-title txt-color-blueDark">
+							
+							Family
+								
+						</h1>
+					</div>
+					<!-- end col -->
+					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4 pull-right">
+						<h1>
+                            <a href="javascript:void(0);" class="btn btn-labeled btn-primary" id="edit-btn"> <span class="btn-label"><i class="glyphicon glyphicon-pencil"></i></span>Edit </a>
+                            <a href="javascript:void(0);" class="btn btn-labeled btn-primary" id="save-btn" style="display: none;"> <span class="btn-label"><i class="fa fa-save"></i></span>Save </a>
+							
+						</h1>	
+					</div>
+				</div>
+				<!-- end row -->
+				
+				<!--
+					The ID "widget-grid" will start to initialize all widgets below 
+					You do not need to use widgets if you dont want to. Simply remove 
+					the <section></section> and you can use wells or panels instead 
+					-->
+				
+				<!-- widget grid -->
+				<section id="widget-grid" class="">
+				
+					<!-- row -->
+					<div class="row">
+						
+						<!-- NEW WIDGET START -->
+						<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                           <div id="household">
+                             <legend>Household Information <a target='_blank' href='http://www.1application.in/howto.html'>(?)</a></legend>
+                              <form class="form-horizontal" id="form-house">
+                                   <fieldset>
+                                          <!--div class="form-group">
+                                          <label class="control-label col-md-2">Parent Marital Status </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="mar-status">
+                                                  <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                          </div-->
+
+                                          <div class="form-group">
+                                          <label class="control-label col-md-2">Permanent Home with </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="per-home">
+                                                 <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                          </div>
+                                           
+                                          <div class="form-group">
+                                          <label class="col-md-2 control-label">No of Children of applicant </label>
+                                          <div class="col-md-4">
+                                              <input class="form-control" type="text" disabled="disabled" id="child-num">
+                                          </div>
+                                          </div>
+                                             </fieldset>
+                                         </form>
+                                </div>
+                                
+                        <div id="parent1">
+                            <legend>Parent1 Information <a target='_blank' href='http://www.1application.in/howto.html'>(?)</a></legend>	
+                              <form class="form-horizontal" id="form-parent1">
+                                   <fieldset>
+                                      <div class="form-group">
+                                          <label class="control-label col-md-2">Parent1 Type </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="par1-type">
+                                                <option class="note-placeholder" disabled value="">Select Parent Type</option>
+                                              </select>
+											  <div id="par1-id" style="display:none"></div>
+                                          </div>
+                                      </div>
+
+                                      <!--div class="form-group">
+                                        <label class="col-md-2 control-label">Is Parent1 Living?</label>
+                                           <div class="col-md-4">
+                                           <label class="radio radio-inline">
+                                           <input type="radio" class="radiobox" name="style-0a" disabled="disabled" id="par1-liv-yes">
+                                             <span>Yes</span> 
+                                           </label>
+                                           <label class="radio radio-inline">
+                                           <input type="radio" class="radiobox" name="style-0a" disabled="disabled" id="par1-liv-no">
+                                             <span>No</span>  
+                                           </label>
+                                           </div>
+                                      </div-->
+
+                                      <div class="form-group">
+                                          <label class="control-label col-md-2">Prefix </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="par1-prefix">
+                                                  <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                      </div>
+
+                                       <div class="form-group">
+                                          <label class="col-md-2 control-label">First Name </label>
+                                          <div class="col-md-4">
+                                              <input class="form-control" type="text" disabled="disabled" id="par1-first-name">
+                                          </div>
+                                       </div>
+
+                                       <div class="form-group">
+                                          <label class="col-md-2 control-label">Middle Name </label>
+                                          <div class="col-md-4">
+                                              <input class="form-control" type="text" disabled="disabled" id="par1-mid-name">
+                                          </div>
+                                       </div>
+
+                                       <div class="form-group">
+                                          <label class="col-md-2 control-label">Last Name </label>
+                                          <div class="col-md-4">
+                                              <input class="form-control" type="text" disabled="disabled" id="par1-last-name">
+                                          </div>
+                                       </div>
+
+                                       <div class="form-group">
+                                          <label class="control-label col-md-2">Nationality </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="par1-country">
+                                                  <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label class="control-label col-md-2">Occupation </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="par1-occu">
+                                                  <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label class="control-label col-md-2">Education Level </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="par1-edu">
+                                                  <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                      </div>
+									  
+									  <div class="form-group">
+                                          <label class="control-label col-md-2">Income Range</label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="income-range">
+                                                  <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                      </div>
+                                   </fieldset>      
+                              </form>               
+				        </div>							
+                                              
+												
+						<div id="parent2">
+                            <legend>Parent2 Information <a target='_blank' href='http://www.1application.in/howto.html'>(?)</a></legend>	
+                              <form class="form-horizontal" id="form-parent2">
+                                   <fieldset>
+                                      <div class="form-group">
+                                          <label class="control-label col-md-2">Parent2 Type </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="par2-type">
+                                                  <option class="note-placeholder" disabled value="">Select Parent Type</option>
+                                              </select>
+											  <div id="par2-id" style="display:none"></div>
+                                          </div>
+                                      </div>
+
+                                      <!--div class="form-group">
+                                        <label class="col-md-2 control-label">Is Parent2 Living?</label>
+                                           <div class="col-md-4">
+                                           <label class="radio radio-inline">
+                                           <input type="radio" class="radiobox" name="style-0a" disabled="disabled" id="par2-liv-yes">
+                                             <span>Yes</span> 
+                                           </label>
+                                           <label class="radio radio-inline">
+                                           <input type="radio" class="radiobox" name="style-0a" disabled="disabled" id="par2-liv-no">
+                                             <span>No</span>  
+                                           </label>
+                                           </div>
+                                      </div-->
+
+                                      <div class="form-group">
+                                          <label class="control-label col-md-2">Prefix </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="par2-prefix">
+                                                  <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                      </div>
+
+                                       <div class="form-group">
+                                          <label class="col-md-2 control-label">First Name </label>
+                                          <div class="col-md-4">
+                                              <input class="form-control" type="text" disabled="disabled" id="par2-first-name" required>
+                                          </div>
+                                       </div>
+
+                                       <div class="form-group">
+                                          <label class="col-md-2 control-label">Middle Name </label>
+                                          <div class="col-md-4">
+                                              <input class="form-control" type="text" disabled="disabled" id="par2-mid-name">
+                                          </div>
+                                       </div>
+
+                                       <div class="form-group">
+                                          <label class="col-md-2 control-label">Last Name </label>
+                                          <div class="col-md-4">
+                                              <input class="form-control" type="text" disabled="disabled" id="par2-last-name">
+                                          </div>
+                                       </div>
+
+                                       <div class="form-group">
+                                          <label class="control-label col-md-2">Nationality </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="par2-country">
+                                                  <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label class="control-label col-md-2">Occupation </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="par2-occu">
+                                                  <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label class="control-label col-md-2">Education Level </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="par2-edu">
+                                                  <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                      </div>
+									  
+									  <div class="form-group">
+                                          <label class="control-label col-md-2">Income Range</label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="income-range2">
+                                                  <option class="note-placeholder" disabled value="">Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                      </div>
+                                   </fieldset>      
+                              </form>               
+				        </div>
+											
+                                           
+												
+												
+						<div id="sibling">	
+                           <legend>Sibling Information <a target='_blank' href='http://www.1application.in/howto.html'>(?)</a></legend><div id="sib-count"	style="display:none"></div>				
+                            <form class="form-horizontal" id="sibling-form">
+                             
+                            </form>
+                           
+                           
+                           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                           <div class="col-2"><a class="btn btn-primary" data-toggle="modal" data-target="#sib_modal" id="sib_add" ><i class="fa fa-plus"></i> Add Sibling Details</a></div></div>
+                            
+                           <div class="modal fade" id="sib_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                            &times;
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">Add Sibling Details <a target='_blank' href='http://www.1application.in/howto.html'>(?)</a></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="well">
+                                         <form class="form-horizontal" id="sibling_add">
+                                         <fieldset>
+                                          <div class="form-group">
+                                            <label class="control-label col-md-3">First Name</label>
+                                            <div class="col-md-6">
+                                              <input class="form-control" type="text" id="sib_first_name" name="sib_first_name" required>
+                                             </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label col-md-3">Middle Name</label>
+                                            <div class="col-md-6">
+                                              <input class="form-control" type="text" id="sib-mid-name">
+                                             </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label col-md-3">Last Name</label>
+                                            <div class="col-md-6">
+                                              <input class="form-control" type="text" id="sib_last_name" name="sib_last_name" required="required">
+                                             </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label col-md-3">Age</label>
+                                            <div class="col-md-6">
+                                              <input class="form-control" type="text" id="sib_age_input" name="sib_age_input" required>
+                                             </div>
+                                          </div> 
+                                          <div class="form-group">
+                                          <label class="control-label col-md-3">Relationship </label>
+                                          <div class="col-md-6">
+                                              <select class="form-control" id="sib_rel_input" name="sib_rel_input" required>
+                                                 <option class="note-placeholder" disabled value="" selected>Select the relevant option</option>
+                                                 <option>Brother</option>
+                                                 <option>Sister</option>
+                                              </select>
+                                          </div>
+                                          </div>
+                                          <div class="form-group">
+                                          <label class="control-label col-md-3">Education Level </label>
+                                          <div class="col-md-6">
+                                              <select class="form-control" id="sib_edu_level" name="sib_edu_level" required>
+                                                 <option class="note-placeholder" disabled value="" selected>Select the relevant option</option>
+                                              </select>
+                                          </div>
+                                          </div>
+
+                                         </fieldset>
+                                         </form>
+                                          
+                                        </div>
+          
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                      <button type="button" class="btn btn-primary" id="add_sib">
+                                            Add
+                                        </button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+				         </div>
+                         </div>
+						
+						</article>
+						<!-- WIDGET END -->
+						
+					</div>
+                    
+				    
+					<!-- end row -->
+				
+				</section>
+				<!-- end widget grid -->
+
+			</div>
+			<!-- END MAIN CONTENT -->
+
+		</div>
+		<!-- END MAIN PANEL -->
+
+		<!-- PAGE FOOTER -->
+		<div class="page-footer">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<span class="txt-color-white">1Application © 2016</span>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE FOOTER -->
+
+		<!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+			}
+		</script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+			}
+		</script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="js/app.config.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+
+		<!-- BOOTSTRAP JS -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="js/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices -->
+		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+
+		<!--[if IE 8]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.min.js"></script>
+
+		<!-- PAGE RELATED PLUGIN(S) -->
+        <script src="bootstrap-notify-master/bootstrap-notify.js"></script>
+		
+
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+			 	
+                 $("#username_head").text(getCookie("userfirstname"));
+				
+				 pageSetUp();
+                 var user_id = getCookie("userid");
+				 console.log("userid: " + user_id);
+
+                 <!-- Ajax call for Logout - Start -->
+
+                    $('#logout').click(function() {
+
+                     $.ajax({
+                     type: 'POST',
+                     url: get_endpoint() + "oneapplication/user/logout/" + user_id, 
+                     contentType:"application/json",
+                     datatype : "json",
+                     success: function (data) {
+                      alert(data.message);
+                      if(data.status == "SUCCESS") {
+                        eraseCookie("userid");
+                        eraseCookie("username");
+                        eraseCookie("userfirstname");
+                        eraseCookie("userrole");
+                        location.href = "login.html";
+                        } // End If
+
+                       else if (data.status == "FAILURE") {
+                                              
+                      } // End Else If
+
+                      }, // End Success Call
+
+                        error: function (data, textStatus, errorThrown) { //In case of error
+                         alert(errorThrown);
+                     }
+                   
+                     }); // End Ajax Call
+                        
+                    }); // End Click function
+           
+                 <!-- Ajax call for Logout - End -->
+                 var data_array_sib = {"userId": user_id};
+				 $('#edit-btn').click(function() {
+
+                  $('#save-btn').toggle();
+                  
+                    $('#form-house input, #form-house select, #form-parent1 input, #form-parent1 select, #form-parent2 input, #form-parent2 select, #sibling-form input, #sibling-form select').each(function() {
+
+                       if($(this).attr('disabled')) {
+
+                        $(this).removeAttr('disabled');
+                       }
+                        else {
+                        $(this).attr({
+
+                         'disabled': 'disabled'
+                         });
+                       }
+                        
+                    });
+  
+                  }); // End Click Function
+                  
+                  <!-- Function for Edit Button End -->
+
+                  <!-- Function for Save Button Start -->
+                  $('#save-btn').click(function() {
+                   $('#save-btn').hide();
+
+                   $('#form-house input, #form-house select, #form-parent1 input, #form-parent1 select, #form-parent2 input, #form-parent2 select, #sibling-form input, #sibling-form select').each(function() {
+                       
+                        $(this).attr({
+
+                         'disabled': 'disabled'
+                         });  
+                        
+                    });
+					
+					<!-- Ajax Call Start -->
+				
+                <!-- 1. Edit/Save Household Info-->
+				                    
+                var data_array_house = {"userId" : user_id, "parentsMaritalStatus" : $('#mar-status option:selected').text(), 
+				"permanentHomeWith" : $('#per-home option:selected').text(), "noOfChildren" : $('#child-num').val()}; 
+				console.log(JSON.stringify(data_array_house));
+				saveEditInfo(get_endpoint() + "oneapplication/secure/student/details/household","PUT",data_array_house,
+				 "Edited/Saved Household data successfully!");
+				<!-- 2. Edit/Save Parent1 Info-->
+				//alert("check");
+				console.log($('#par1-type option:selected').text());
+				var data_array_par = {"userId": user_id,"id":$('#par1-id').text(),"parentPriority": "1","parentType": $('#par1-type option:selected').text(),
+				"prefix": $('#par1-prefix option:selected').text(),"firstName": $('#par1-first-name').val(),"middleName": $('#par1-mid-name').val(),
+				"lastName": $('#par1-last-name').val(),"formerLastName": null,"countryId": $('#par1-country').val(),"occupationId": $('#par1-occu').val(),"educationLevelId": $('#par1-edu').val(),"incomeRangeId":$('#income-range').val()}; //default country india 
+				console.log(JSON.stringify(data_array_par));
+				 saveEditInfo(get_endpoint() + "oneapplication/secure/student/details/family/parents/add","PUT",data_array_par,
+				 "Edited/Saved Parent1 data successfully!");
+				<!-- 3. Edit/Save Parent2 Info-->
+				//alert("check");
+				data_array_par = {"userId": user_id,"id":$('#par2-id').text(),"parentPriority": "2","parentType": $('#par2-type option:selected').text(),
+				"prefix": $('#par2-prefix option:selected').text(),"firstName": $('#par2-first-name').val(),"middleName": $('#par2-mid-name').val(),
+				"lastName": $('#par2-last-name').val(),"formerLastName": null,"countryId": $('#par2-country').val(),"occupationId": $('#par2-occu').val(),"educationLevelId": $('#par2-edu').val(),"incomeRangeId":$('#income-range2').val()};
+				console.log(JSON.stringify(data_array_par));
+				 saveEditInfo(get_endpoint() + "oneapplication/secure/student/details/family/parents/add","PUT",data_array_par,
+				 "Edited/Saved Parent2 data successfully!");
+				<!-- 4. Edit/Save Sibling Info-->
+				
+				var sib_cnt = $("#sib-count").text();console.log("no of siblings->"+sib_cnt);
+				for(var s=0;s<sib_cnt; s++)
+				{
+				var data_array_sib = {"userId": user_id,"id":$("#sib-id"+(s+1)).text(),"firstName":$("#firstName"+(s+1)).val(),"middleName": $("#midName"+(s+1)).val(),"lastName": $("#lastName"+(s+1)).val(),"age": $("#sibAge"+(s+1)).val(),"relationship": $("#sibRel"+(s+1)+" option:selected").text(),"educationLevelId":2}
+				
+				console.log(JSON.stringify(data_array_sib));
+				 saveEditInfo(get_endpoint() + "oneapplication/secure/student/details/family/siblings/add","PUT",data_array_sib,
+				 "Edited/Saved Sibling"+(s+1)+" data successfully!");
+				}
+
+				});
+                 <!-- Ajax Call for fetching Student Household Details Start -->
+
+                     $.ajax({
+                    
+                     type: 'POST', 
+                     url: get_endpoint() + "oneapplication/secure/student/details/household", 
+                     contentType:"application/json",
+                     datatype : "json",
+                     data: JSON.stringify(data_array_sib),
+                     success: function (responseData_house) {
+                     
+                       if(responseData_house.status == "SUCCESS") {
+						 console.log("got household data");
+                         var mar_status = responseData_house.responseData.parentsMaritalStatus;
+                         console.log("marital status: "+mar_status);
+						 var arrayHC = ["Married","Divorced","Separated","Other"];
+						
+						 setHardCodedNameList("mar-status",mar_status,arrayHC);
+						 
+						 var phome = responseData_house.responseData.permanentHomeWith;
+                         console.log("permanant home with: "+phome);
+						 arrayHC = ["Father","Mother","Both","Other"];
+						 
+						 setHardCodedNameList("per-home",phome,arrayHC);
+						
+						 var child_count = responseData_house.responseData.noOfChildren;
+						 console.log("number of children: "+child_count);
+                         document.getElementById("child-num").value = child_count;
+                     
+                        } // End If
+                        else if (responseData_house.status == "FAILURE") {
+                                              
+                        } // End Else If
+                      },
+                     error: function (responseData_house, textStatus, errorThrown) { //In case of error
+                     
+                     }
+                 });
+
+
+                 <!-- Ajax Call for fetching Student Household Details End -->
+
+                 <!-- Ajax call for fetching Student Parent Details Start -->
+				   var parent1_det, parent2_det;
+				   var user_id = getCookie("userid");
+				   console.log("userid: " + user_id);
+                   $.ajax({
+                    
+                     type: 'POST', 
+                     url: get_endpoint() + "oneapplication/secure/student/details/family/parents", 
+                     contentType:"application/json",
+                     datatype : "json",
+                     data: JSON.stringify(data_array_sib),
+                     success: function (responseData_par) {
+						//alert("check");
+                       if(responseData_par.status == "SUCCESS") {
+						console.log(responseData_par.responseData.familyDetails.length+"-x-"+responseData_par.responseData.familyDetails[0]); 
+						console.log(responseData_par.responseData.familyDetails[0].parentType); 
+						if(responseData_par.responseData.familyDetails[0].parentType==null){
+							console.log("got parentType null")
+						}
+                         parent1_det = responseData_par.responseData.familyDetails[0];
+						 parent2_det = responseData_par.responseData.familyDetails[1]; ///URGENT please change the familyDetails[0] to familyDetails[1] once api returns both parents correctly
+						 console.log("parent1_det "+JSON.stringify(parent1_det)+" 2 "+JSON.stringify(parent2_det));
+                        if((parent1_det.firstName ===null)||(parent1_det.parentType ===null))  //parents not added
+						{
+							//add parents with default values
+							// edit parent 1
+							// edit parent 2
+							console.log("Need to edit both parents!");
+							<!-- 2. Edit/Save Parent1 Info-->
+							var user_id = getCookie("userid");
+							console.log("userid: " + user_id);
+							var data_array_par = {"userId": user_id,"id":parent1_det.id,"parentPriority": "1","parentType": "Mother",
+							"prefix": "Mrs","firstName": "firstName","middleName": "middleName",
+							"lastName": "lastName","formerLastName": null,
+							"countryId": 1,
+							"occupationId": 3,
+							"educationLevelId": 3
+							}; //default country india 
+							console.log(JSON.stringify(data_array_par));
+							console.log(JSON.stringify(parent1_det));
+							 saveEditInfo(get_endpoint() + "oneapplication/secure/student/details/family/parents/add","PUT",data_array_par,
+							 "Edited/Saved Parent1 data successfully!");
+							<!-- 3. Edit/Save Parent2 Info-->
+							console.log(JSON.stringify(parent2_det));
+							data_array_par = {"userId": user_id,"id":parent2_det.id,"parentPriority": "1","parentType": "Father",
+							"prefix": "Mr","firstName": "firstName","middleName": "middleName",
+							"lastName": "lastName","formerLastName": null,
+								"countryId": 1,
+							"occupationId": 3,
+							"educationLevelId": 3
+							}; //default country india 
+							console.log(JSON.stringify(data_array_par));
+							
+							 saveEditInfo(get_endpoint() + "oneapplication/secure/student/details/family/parents/add","PUT",data_array_par,
+							 "Edited/Saved Parent2 data successfully!");
+							/*var data_array_par = 
+							{"userId":user_id, "familyDetails": [ {"parentPriority": "1","parentType": "Mother","prefix": "Mrs","firstName": "firstname","middleName": "","lastName": "lastname","formerLastName": null,"countryId": 1,"occupationId": 2,"educationLevelId": 3},
+							{"parentPriority": "1","parentType": "Father","prefix": "Mr","firstName": "firstname","middleName": "","lastName": "lastname","formerLastName": null,"countryId": 1,"occupationId": 2,"educationLevelId": 3}]};
+							console.log(JSON.stringify(data_array_par));
+							if(responseData_par.responseData.familyDetails.length==1)
+							saveAddParent(get_endpoint() + "oneapplication/secure/student/details/family/parents/add",
+							"POST",data_array_par,"Parent1 data added successfully for the first time!");*/
+							
+							 $.ajax({
+								 type: 'POST', 
+								 url: get_endpoint() + "oneapplication/secure/student/details/family/parents", 
+								 contentType:"application/json",
+								 datatype : "json",
+								 data: JSON.stringify(data_array_sib),
+								 success: function (responseData_par) {
+								 
+								   if(responseData_par.status == "SUCCESS") {
+								   console.log("2nd time lucky!");
+								   parent1_det = responseData_par.responseData.familyDetails[0];
+								   parent2_det = responseData_par.responseData.familyDetails[1];
+								   console.log("calling loadParentInfo");
+								   console.log(JSON.stringify(parent1_det));
+								   console.log(JSON.stringify(parent2_det));
+								   console.log(parent1_det.occupation.dispName);
+								   console.log(parent1_det.occupation.dispName);
+								   loadParentInfo(parent1_det,parent2_det);
+								   } // End If
+									else if (responseData_par.status == "FAILURE") {
+														  
+									} // End Else If
+								  },
+								 error: function (responseData_par, textStatus, errorThrown) { //In case of error
+								 
+								 }
+							 });
+						}
+						 
+						 loadParentInfo(parent1_det,parent2_det);
+						 
+						/*
+                        //var parent1_type = parent1_det.parentType;
+						var arrayHC = ["Father","Mother","Other"];
+						 
+						 setHardCodedNameList("par1-type",parent1_det.parentType,arrayHC);
+						 $('#par1-id').text(parent1_det.id);
+                        /*var option_type1 = document.createElement("option");
+                        option_type1.text = parent1_type;
+                        var parent1_pfx = parent1_det.prefix;
+                        var option_pfx1 = document.createElement("option");
+                        option_pfx1.text = parent1_pfx;
+						arrayHC = ["Mr","Mrs","Ms"];
+						setHardCodedNameList("par1-prefix",parent1_det.prefix,arrayHC);
+                        var parent1_fn = parent1_det.firstName;
+                        var parent1_mn = parent1_det.middleName;
+                        var parent1_ln = parent1_det.lastName;
+                        //var parent1_ctry = parent1_det.birthCountry.countryDisplayName;
+                        var option_ctry1 = document.createElement("option");
+                        option_ctry1.text = "INDIA";
+												
+						var parent2_det = responseData_par.responseData.familyDetails[1];
+                        var parent1_occu = parent1_det.occupation.dispName;
+                        /*var option_occu1 = document.createElement("option");
+                        option_occu1.text = parent1_occu;
+						option_occu1.id = parent1_det.occupation.id;
+						setNameList(get_endpoint() + "oneapplication/common/occupation","GET","par1-occu",parent1_det.occupation.id);
+                        /*var parent1_edu = parent1_det.educationLevel.dispName;
+                        var option_edu1 = document.createElement("option");
+                        option_edu1.text = parent1_edu;
+						option_edu1.id = parent1_det.educationLevel.id;
+						setNameList(get_endpoint() + "oneapplication/common/edulevel","GET","par1-edu",parent1_det.educationLevel.id);
+						
+						setHardCodedNameList("par2-type",parent2_det.parentType,arrayHC);
+
+                        //var parent2_type = parent2_det.parentType;
+                        /*var option_type2 = document.createElement("option");
+                        option_type2.text = parent2_type;
+						
+                        var parent2_pfx = parent2_det.prefix;
+                        var option_pfx2 = document.createElement("option");
+                        option_pfx2.text = parent2_pfx;
+						arrayHC = ["Mr","Mrs","Ms"];
+						setHardCodedNameList("par2-prefix",parent2_det.prefix,arrayHC);
+						$('#par2-id').text(parent2_det.id);
+                        var parent2_fn = parent2_det.firstName;
+                        var parent2_mn = parent2_det.middleName;
+                        var parent2_ln = parent2_det.lastName;
+                        //var parent2_ctry = parent2_det.birthCountry.countryDisplayName;
+                        var option_ctry2 = document.createElement("option");
+                        option_ctry2.text = "INDIA"; //now add other countries
+                        var parent2_occu = parent2_det.occupation.dispName;
+                        /*var option_occu2 = document.createElement("option");
+                        option_occu2.text = parent2_occu;
+						option_occu2.id = parent2_det.id;
+						setNameList(get_endpoint() + "oneapplication/common/occupation","GET","par2-occu",parent2_det.occupation.id);
+                        var parent2_edu = parent2_det.educationLevel.dispName;
+                        /*var option_edu2 = document.createElement("option");
+                        option_edu2.text = parent2_edu;
+						option_edu2.id = parent2_det.educationLevel.id;
+						setNameList(get_endpoint() + "oneapplication/common/edulevel","GET","par2-edu",parent2_det.educationLevel.id);
+                        //document.getElementById("par1-type").add(option_type1);
+                        //document.getElementById("par1-prefix").add(option_pfx1);
+                        document.getElementById("par1-first-name").value = parent1_fn;
+                        document.getElementById("par1-mid-name").value = parent1_mn;
+                        document.getElementById("par1-last-name").value = parent1_ln;
+                        document.getElementById("par1-country").add(option_ctry1);
+                        //document.getElementById("par1-occu").add(option_occu1);
+                        //document.getElementById("par1-edu").add(option_edu1);
+
+                        //document.getElementById("par2-type").add(option_type2);
+                        //document.getElementById("par2-prefix").add(option_pfx2);
+                        document.getElementById("par2-first-name").value = parent2_fn;
+                        document.getElementById("par2-mid-name").value = parent2_mn;
+                        document.getElementById("par2-last-name").value = parent2_ln;
+                        document.getElementById("par2-country").add(option_ctry2);
+                        //document.getElementById("par2-occu").add(option_occu2);
+                        //document.getElementById("par2-edu").add(option_edu2);
+						*/
+                        } // End If
+                        else if (responseData_par.status == "FAILURE") {
+                                              
+                        } // End Else If
+                      },
+                     error: function (responseData_par, textStatus, errorThrown) { //In case of error
+                     
+                     }
+                 });
+
+                 <!-- Ajax call for fetching Student Parent Details End -->
+
+                 <!-- Ajax Call for fetching Student Siblings Details Start -->
+				 console.log("sibling");
+				 console.log(JSON.stringify(data_array_sib));
+                   $.ajax({
+                    
+                     type: 'POST', 
+                     url: get_endpoint() + "oneapplication/secure/student/details/family/siblings", 
+                     contentType:"application/json",
+                     datatype : "json",
+                     data: JSON.stringify(data_array_sib),
+                     success: function (responseData_sib) {
+                     
+                       if(responseData_sib.status == "SUCCESS") {
+                      
+                        var sib_length = responseData_sib.responseData.siblingDetails.length;
+                        console.log("Sibling Count:" +sib_length);
+						//if(responseData_sib.responseData.siblingDetails.age){
+							$("#sib-count").text(sib_length);
+                            
+							var sib_details = responseData_sib.responseData.siblingDetails;
+							console.log("sib length: " + sib_length);
+							console.log(JSON.stringify(sib_details));
+							var sib_firstName = [];
+							var sib_midName = [];
+							var sib_lastName = [];
+							var sib_age = [];
+							var option_age = [];
+							var sib_rel = [];
+							var option_rel = [];
+                            var sib_count = 0;
+							for(var sib_i=1; sib_i <= sib_length; sib_i++)
+							  {
+                                   if(sib_details[sib_i-1].age > 0) {
+                                    sib_count = sib_count + 1;
+								 $('<fieldset><div class="col-xs-12 col-sm-12 col-md-12"><div class="col-xs-9 col-sm-8 col-md-6"><legend>Sibling  '+sib_count+'</legend></div></div><br><div class="form-group"><label class="col-md-2 control-label">First Name </label><div class="col-md-4"><input class="form-control" type="text" disabled="disabled" id="firstName'+sib_i+'"></div></div>'+'<div id="sib-id'+sib_i+'" style="display:none" ></div><div class="form-group"><label class="col-md-2 control-label">Middle Name </label><div class="col-md-4"><input class="form-control" type="text" disabled="disabled" id="midName'+sib_i+'"></div></div><div class="form-group"><label class="col-md-2 control-label">Last Name </label><div class="col-md-4"><input class="form-control" type="text" disabled="disabled" id="lastName'+sib_i+'"></div></div><div class="form-group"><label class="control-label col-md-2">Age</label><div class="col-md-4"><input class="form-control" disabled="disabled" id="sibAge'+sib_i+'"></input></div></div><div class="form-group"><label class="control-label col-md-2">Relationship</label><div class="col-md-4"><select class="form-control" disabled="disabled" id="sibRel'+sib_i+'" required></select></div></div></fieldset>').appendTo('#sibling-form');
+
+								 sib_firstName[sib_i] = sib_details[sib_i-1].firstName;
+								 sib_midName[sib_i] = sib_details[sib_i-1].middleName;
+								 sib_lastName[sib_i] = sib_details[sib_i-1].lastName;
+								 sib_age[sib_i] = sib_details[sib_i-1].age;
+								 //option_age[sib_i] = document.createElement("option");
+								 //option_age[sib_i].text = sib_age[sib_i];
+								 sib_rel[sib_i] = sib_details[sib_i-1].relationship;
+								 option_rel[sib_i] = document.createElement("option");
+								 option_rel[sib_i].text = sib_rel[sib_i];
+
+								 $('#sib-id'+sib_i).text(sib_details[sib_i-1].id);
+								 document.getElementById("firstName"+sib_i).value = sib_firstName[sib_i];
+								 document.getElementById("midName"+sib_i).value = sib_midName[sib_i];
+								 document.getElementById("lastName"+sib_i).value = sib_lastName[sib_i];
+								 document.getElementById("sibAge"+sib_i).value = sib_age[sib_i];//alert(sib_firstName[sib_i]+sib_age[sib_i]);
+								 //document.getElementById("sibAge"+sib_i).add(option_age[sib_i]);
+								 //document.getElementById("sibRel"+sib_i).add(option_rel[sib_i]);
+								 arrayHC = ["Brother","Sister"];
+								setHardCodedNameList("sibRel"+sib_i,sib_rel[sib_i],arrayHC);
+                                }
+							  } // End for loop
+							 //} // End If
+                     
+                        } // End If
+                        else if (responseData_sib.status == "FAILURE") {
+                                              
+                        } // End Else If
+                      },
+                     error: function (responseData_sib, textStatus, errorThrown) { //In case of error
+                     
+                     }
+                });
+
+                <!-- Ajax Call for fetching Student Siblings Details End -->
+
+                <!-- Function for Sibling Add Button Click Start -->
+
+                 $('#sib_add').click(function() {       
+
+                    var edu_sel_len = $('#sib_edu_level').length;
+                    if (edu_sel_len > 0) {
+                    $('#sib_edu_level').empty();
+                    }           
+
+                    <!-- Ajax call to populate Education level Field Start -->
+
+                      $.ajax({
+                    
+                     type: 'GET', 
+                     url: get_endpoint() + "oneapplication/common/edulevel", 
+                     datatype : "json",
+                     success: function (responseData_edu) {
+                     
+                       if(responseData_edu.status == "SUCCESS") {
+
+                         $('#sib_edu_level').append('<option class="note-placeholder" disabled value="" selected>'+"Select the relevant option"+'</option>');
+                         var edu_length = responseData_edu.responseData.length;
+                         var edu_levelName = [];
+                         var option_edu = [];
+                         var edu_levelId = [];
+                         for(var edu_i=0; edu_i < edu_length; edu_i++) {
+                            
+                            edu_levelName[edu_i] = responseData_edu.responseData[edu_i].dispName;
+                            edu_levelId[edu_i] = responseData_edu.responseData[edu_i].id;
+                            option_edu[edu_i] = document.createElement("option");
+                            option_edu[edu_i].text = edu_levelName[edu_i];
+                            option_edu[edu_i].value = edu_levelId[edu_i];
+
+                            document.getElementById("sib_edu_level").add(option_edu[edu_i]);
+
+                          } // End for loop
+                     
+                        } // End If
+                        else if (responseData_edu.status == "FAILURE") {
+                            alert(responseData_edu.status);                  
+                        } // End Else If
+                      },
+                     error: function (responseData_edu, textStatus, errorThrown) { //In case of error
+                     alert("Error");
+                     }
+                 });
+
+                    <!-- Ajax call to populate Education level Field End -->
+
+                 }); // End Click Function
+                 
+                <!-- Function for Sibling Add Button Click End -->
+
+                <!-- Function for Modal Add Button Click Start -->
+
+                    $('#add_sib').click(function() {
+
+                     if( $('#sibling_add').valid()) {
+                              
+
+                       var sel_sib_fn = $('#sib_first_name').val();
+                       var sel_sib_mn = $('#sib-mid-name').val();
+                       var sel_sib_ln = $('#sib_last_name').val();
+                       var sel_sib_age = $('#sib_age_input').val();
+                       var sel_sib_rel = $('#sib_rel_input').val();
+                       var sel_sib_edu = $('#sib_edu_level').val();
+
+                      
+                       var sib_data = {"firstName": sel_sib_fn, "middleName": sel_sib_mn, "lastName": sel_sib_ln, "age": sel_sib_age, "relationship": sel_sib_rel, "educationLevelId": sel_sib_edu};
+                       var sib_dataArray = {"userId": user_id, "siblingDetails": [sib_data]};
+                      
+                       <!-- Ajax call to Add Student Sibling Details Start -->
+
+                      $.ajax({
+                    
+						   type: 'POST', 
+						   url: get_endpoint() + "oneapplication/secure/student/details/family/siblings/add", 
+						   contentType:"application/json",
+						   datatype : "json",
+						   data: JSON.stringify(sib_dataArray),
+						   success: function (responseData_sibadd) {
+						   
+							 if(responseData_sibadd.status == "SUCCESS") {
+							
+                                $.notify({
+
+								  icon: 'glyphicon glyphicon-ok',
+								  message: responseData_sibadd.message
+								 },{
+								 
+								  allow_dismiss: true,
+								  placement: {
+									 from: "top",
+									 align: "center"
+								  },
+								  z_index: 1031,
+								  type: "custom-success",
+								  delay: 8000
+	  
+							   });
+							   
+							  } // End If
+							  else if (responseData_sibadd.status == "FAILURE") {
+
+                                $.notify({
+
+								  icon: 'glyphicon glyphicon-remove',
+								  message: responseData_sibadd.message
+								 },{
+								 
+								  allow_dismiss: true,
+								  placement: {
+									 from: "top",
+									 align: "center"
+								  },
+								  z_index: 1031,
+								  type: "danger",
+								  delay: 8000
+	  
+							   });
+													
+							  } // End Else If
+							},
+						   error: function (responseData_sibadd, textStatus, errorThrown) { //In case of error
+						   alert(errorThrown);
+							} 
+
+                      }); 
+
+                    <!-- Ajax call to Add Student Sibling Details End -->
+
+                     $('#sibling_add').each(function() {
+                    
+								   this.reset();
+								  
+							  });
+
+                     $('#sib_modal').modal('hide');
+                     } // End If
+
+
+                    }); // End Click Function
+
+                <!-- Function for Modal Add Button Click End -->
+                
+				
+			})
+			function loadParentInfo(parent1_det,parent2_det)
+			{
+						console.log(parent1_det);
+						console.log(parent2_det);
+			            if(typeof parent1_det.length !="undefined" && typeof parent2_det.length=="undefined") return false;
+						//var parent1_type = parent1_det.parentType;
+						var arrayHC = ["Father","Mother","Other"];
+						 
+						 setHardCodedNameList("par1-type",parent1_det.parentType,arrayHC);
+						 $('#par1-id').text(parent1_det.id);
+                        /*var option_type1 = document.createElement("option");
+                        option_type1.text = parent1_type;
+                        var parent1_pfx = parent1_det.prefix;
+                        var option_pfx1 = document.createElement("option");
+                        option_pfx1.text = parent1_pfx;*/
+						arrayHC = ["Mr","Mrs","Late Mr","Late Mrs"];
+						setHardCodedNameList("par1-prefix",parent1_det.prefix,arrayHC);
+                        var parent1_fn = parent1_det.firstName;
+                        var parent1_mn = parent1_det.middleName;
+                        var parent1_ln = parent1_det.lastName;
+                        var parent1_ctry = parent1_det.birthCountry.countryDisplayName;
+                        var option_ctry1 = document.createElement("option");
+                        option_ctry1.text = parent1_ctry;
+												
+						//var parent2_det = responseData_par.responseData.familyDetails[1];
+						var parent1_occu = "OTHER";
+						/*if(parent1_det.occupation.dispName === null){
+							parent1_occu = "OTHER";
+						}
+						else{
+							parent1_occu = parent1_det.occupation.dispName;
+						}*/
+                        
+                        /*var option_occu1 = document.createElement("option");
+                        option_occu1.text = parent1_occu;
+						option_occu1.id = parent1_det.occupation.id;*/
+						if(parent2_det.incomeRange!=null){
+						setNameList(get_endpoint() + "oneapplication/common/incomerange","GET","income-range",parent1_det.incomeRange.id);
+						}else{
+						setNameList(get_endpoint() + "oneapplication/common/incomerange","GET","income-range",0);
+						}						
+						
+						setNameList(get_endpoint() + "oneapplication/common/occupation","GET","par1-occu",parent1_det.occupation.id);
+                        /*var parent1_edu = parent1_det.educationLevel.dispName;
+                        var option_edu1 = document.createElement("option");
+                        option_edu1.text = parent1_edu;
+						option_edu1.id = parent1_det.educationLevel.id;*/
+						setNameList(get_endpoint() + "oneapplication/common/edulevel","GET","par1-edu",parent1_det.educationLevel.id);
+						
+                        /* Added 2 May 16 */
+                        arrayHC = ["Father","Mother","Other"];
+						setHardCodedNameList("par2-type",parent2_det.parentType,arrayHC);
+
+                        //var parent2_type = parent2_det.parentType;
+                        /*var option_type2 = document.createElement("option");
+                        option_type2.text = parent2_type;
+						
+                        var parent2_pfx = parent2_det.prefix;
+                        var option_pfx2 = document.createElement("option");
+                        option_pfx2.text = parent2_pfx;*/
+						arrayHC = ["Mr","Mrs","Ms"];
+						setHardCodedNameList("par2-prefix",parent2_det.prefix,arrayHC);
+						$('#par2-id').text(parent2_det.id);
+                        var parent2_fn = parent2_det.firstName;
+                        var parent2_mn = parent2_det.middleName;
+                        var parent2_ln = parent2_det.lastName;
+                        var parent2_ctry = parent2_det.birthCountry.countryDisplayName;
+                        var option_ctry2 = document.createElement("option");
+                        option_ctry2.text = parent2_ctry; //now add other countries
+                        var parent2_occu = parent2_det.occupation.dispName;
+                        /*var option_occu2 = document.createElement("option");
+                        option_occu2.text = parent2_occu;
+						option_occu2.id = parent2_det.id;*/
+						//	alert(parent2_det.incomeRange.id);
+						if(parent2_det.incomeRange!=null){
+						setNameList(get_endpoint() + "oneapplication/common/incomerange","GET","income-range2",parent2_det.incomeRange.id);
+						}else{
+						setNameList(get_endpoint() + "oneapplication/common/incomerange","GET","income-range2",0);
+						}
+						setNameList(get_endpoint() + "oneapplication/common/occupation","GET","par2-occu",parent2_det.occupation.id);
+                        var parent2_edu = parent2_det.educationLevel.dispName;
+                        /*var option_edu2 = document.createElement("option");
+                        option_edu2.text = parent2_edu;
+						option_edu2.id = parent2_det.educationLevel.id;*/
+						setNameList(get_endpoint() + "oneapplication/common/edulevel","GET","par2-edu",parent2_det.educationLevel.id);
+                        //document.getElementById("par1-type").add(option_type1);
+                        //document.getElementById("par1-prefix").add(option_pfx1);
+                        document.getElementById("par1-first-name").value = parent1_fn;
+                        document.getElementById("par1-mid-name").value = parent1_mn;
+                        document.getElementById("par1-last-name").value = parent1_ln;
+						setCountryNameList((get_endpoint() + "oneapplication/common/country"),"GET","par1-country",parent1_det.birthCountry.id);
+                        //document.getElementById("par1-country").add(option_ctry1);
+                        //document.getElementById("par1-occu").add(option_occu1);
+                        //document.getElementById("par1-edu").add(option_edu1);
+
+                        //document.getElementById("par2-type").add(option_type2);
+                        //document.getElementById("par2-prefix").add(option_pfx2);
+                        document.getElementById("par2-first-name").value = parent2_fn;
+                        document.getElementById("par2-mid-name").value = parent2_mn;
+                        document.getElementById("par2-last-name").value = parent2_ln;
+						setCountryNameList((get_endpoint() + "oneapplication/common/country"),"GET","par2-country",parent2_det.birthCountry.id);
+                        //document.getElementById("par2-country").add(option_ctry2);
+                        //document.getElementById("par2-occu").add(option_occu2);
+                        //document.getElementById("par2-edu").add(option_edu2);
+						return true;
+			}
+			<!-- Function for Save Edit Any data -->
+			function saveEditInfo(urlToSave,saveType,data_array_sib,successData)
+			{
+				
+				console.log(JSON.stringify(data_array_sib));
+				$.ajax({
+                    type: saveType, 
+                     url: urlToSave, 
+                     contentType:"application/json",
+                     datatype : "json",
+                     data: JSON.stringify(data_array_sib),
+                     success: function (responseData_house) {
+                     
+                       if(responseData_house.status == "SUCCESS") {
+
+                             $.notify({
+
+									  icon: 'glyphicon glyphicon-ok',
+									  message: responseData_house.message
+									 },{
+									 
+									  allow_dismiss: true,
+									  placement: {
+										 from: "top",
+										 align: "center"
+									  },
+									  z_index: 1031,
+									  type: "custom-success",
+									  delay: 8000
+		  
+								   });
+							if(successData=="") {
+								successData="success";
+								$.ajax({
+								 type: 'POST', 
+								 url: get_endpoint() + "oneapplication/secure/student/details/family/parents", 
+								 contentType:"application/json",
+								 datatype : "json",
+								 data: JSON.stringify(data_array_sib),
+								 success: function (responseData_par) {
+								 
+								   if(responseData_par.status == "SUCCESS") {
+
+								   console.log("2nd time lucky!");
+								   parent1_det = responseData_par.responseData.familyDetails[0];
+								   parent2_det = responseData_par.responseData.familyDetails[1];
+								   console.log("calling loadParentInfo");
+								   console.log(JSON.stringify(parent1_det));
+								   console.log(JSON.stringify(parent2_det));
+								   console.log(parent1_det.occupation.dispName);
+								   console.log(parent1_det.occupation.dispName);
+								   loadParentInfo(parent1_det,parent2_det);
+								   } // End If
+									else if (responseData_par.status == "FAILURE") {
+                                        
+										console.log("fetch parent info failed");	  
+									} // End Else If
+								  },
+								 error: function (responseData_par, textStatus, errorThrown) { //In case of error
+									console.log("fetch parent info returned error");
+								 }
+							 });
+								}
+								console.log(successData);
+								//console.log(responseData_house.message);
+                     
+                        } // End If
+                        else if (responseData_house.status == "FAILURE") {
+
+                            $.notify({
+
+										  icon: 'glyphicon glyphicon-remove',
+										  message: responseData_house.message
+										 },{
+										 
+										  allow_dismiss: true,
+										  placement: {
+											 from: "top",
+											 align: "center"
+										  },
+										  z_index: 1031,
+										  type: "danger",
+										  delay: 8000
+			  
+									   });
+							console.log(responseData_house.message);
+                        } // End Else If
+                      },
+                     error: function (responseData_house, textStatus, errorThrown) { //In case of error
+						console.log(responseData_house.message);
+						console.log(errorThrown);
+                     }
+                 });
+			
+			}
+			<!-- Function for Save Edit Any data -->
+			function saveAddParent(urlToSave,saveType,data_array_par,successData)
+			{
+				
+				
+				$.ajax({
+                    type: saveType, 
+                     url: urlToSave, 
+                     contentType:"application/json",
+                     datatype : "json",
+                     data: JSON.stringify(data_array_par),
+                     success: function (responseData_house) {
+                     
+                       if(responseData_house.status == "SUCCESS") {
+							if(successData=="") successData="success";
+                         console.log("Success: "+successData);
+						 //console.log(responseData_house.message);
+                     
+                        } // End If
+                        else if (responseData_house.status == "FAILURE") {
+                                              
+                        } // End Else If
+                      },
+                     error: function (responseData_house, textStatus, errorThrown) { //In case of error
+                     
+                     }
+                 });
+			
+			}
+			function setNameList(urlToFetch,fetchType,divIdToUpdate,idSelected)
+			{	
+				var pref_list = [];
+				 $.ajax({
+							 type: fetchType,
+							 url: urlToFetch,  //
+							 
+							 success: function (data_add) {
+							  
+							  if(data_add.status == "SUCCESS") {
+								pref_list = data_add.responseData;
+								 //console.log("pref_list len:"+pref_list.length);
+									for(var  l=0;l<pref_list.length;l++){ 
+								   //console.log(" city list:"+pref_list[l].id+"--"+pref_list[l].dispName);
+								   var sel = "";
+									//console.log('clist:'+pref_list[l].id+' c_id'+ idSelected);
+									//console.log("'#"+ divIdToUpdate +" option[value="+ idSelected+"]'"+"--xx--");
+									//console.log("'#"+ divIdToUpdate + "'"+"--xx--");
+								   if(pref_list[l].id == idSelected ) 
+								   { sel = ' selected="selected"'; $("#"+ divIdToUpdate + " option[value="+ idSelected+"]").remove();}
+								   $('#'+ divIdToUpdate).append('<option value="'+pref_list[l].id+'"'+sel+'>'+pref_list[l].dispName+'</option>');
+								   
+								   }
+								} // End If
+		
+							   else if (data_add.status == "FAILURE") {
+							   
+							   console.log("Could not retrieve country list!");
+													  
+							  } // End Else If
+		
+							  }, // End Success Call
+		
+								error: function (data_add, textStatus, errorThrown) { //In case of error
+								 alert(errorThrown);
+							 }
+						   
+							 });
+		
+			}
+		function setCountryNameList(urlToFetch,fetchType,divIdToUpdate,idSelected)
+		{	
+			var pref_list = []; if (idSelected==0) idSelected=1;
+			 $.ajax({
+						 type: fetchType,
+						 url: urlToFetch,  //
+						 
+						 success: function (data_add) {
+                          
+						  if(data_add.status == "SUCCESS") {
+							pref_list = data_add.responseData;
+							 console.log("pref_list len:"+pref_list.length);
+								for(var  l=0;l<pref_list.length;l++){ 
+							   //console.log(" city list:"+pref_list[l].id+"--"+pref_list[l].dispName);
+							   var sel = "";
+								/*console.log('clist:'+pref_list[l].id+' c_id'+ idSelected);
+								console.log("'#"+ divIdToUpdate +" option[value="+ idSelected+"]'"+"--xx--");
+								console.log("'#"+ divIdToUpdate + "'"+"--xx--");*/
+							   if(pref_list[l].id == idSelected ) 
+							   { sel = ' selected="selected"'; $("#"+ divIdToUpdate + " option[value="+ idSelected+"]").remove();}
+							   $('#'+ divIdToUpdate).append('<option value="'+pref_list[l].id+'"'+sel+'>'+pref_list[l].countryDispName+'</option>');
+							   
+							   }
+							} // End If
+	
+						   else if (data_add.status == "FAILURE") {
+						   
+						   console.log("Could not retrieve country list!");
+												  
+						  } // End Else If
+	
+						  }, // End Success Call
+	
+							error: function (data_add, textStatus, errorThrown) { //In case of error
+							 alert(errorThrown);
+						 }
+					   
+						 });
+		
+		
+		}
+ // End function */
+
+        function setHardCodedNameList(divIdToUpdate,valSel,arrayHC)
+			           {	
+				                    var pref_list = [];
+									pref_list = arrayHC;
+									var noOfOption = 1;                                         
+                                    
+									if(arrayHC.indexOf(valSel)>-1)noOfOption =pref_list.length+1 ;
+									
+									for(var  l=0;l<pref_list.length;l++){ 
+								   
+								    var sel = "";
+								   
+									   if(pref_list[l]==valSel)
+									   { 
+									   sel = ' selected="selected"'; 
+                                       //$("#"+ divIdToUpdate + " option[value="+ 1+"]").remove();
+									   $('#'+ divIdToUpdate).append('<option value="'+(l+1)+'"'+sel+'>'+pref_list[l]+'</option>');
+									   }
+									   else
+									   {
+									   sel = "";
+									   $('#'+ divIdToUpdate).append('<option value="'+(l+1)+'"'+sel+'>'+pref_list[l]+'</option>');
+										}
+									
+								   }
+								   if(arrayHC.indexOf(valSel)==-1){
+                                      console.log(valSel);                            
+								   //sel = ' selected="selected"'; $("#"+ divIdToUpdate + " option[value='"+ 1+"']").remove();
+								   
+									 //  $('#'+ divIdToUpdate).append('<option value="'+1+'"'+sel+'>'+valSel+'</option>');
+                                      //$('#'+ divIdToUpdate).index(-1);
+                                      $('#'+ divIdToUpdate).prop('selectedIndex', 0);
+									   }
+                          
+			} // End function
+		
+		</script>
+
+       <!-- SCRIPT FOR BACK TO TOP BUTTON-->
+         <script>
+ 
+       $(function(){
+ 
+	    $(document).on( 'scroll', function(){
+ 
+		    if ($(window).scrollTop() > 100) {
+			  $('.scroll-top-wrapper').addClass('show');
+		      } else {
+			   $('.scroll-top-wrapper').removeClass('show');
+		      }
+	        });
+         });
+        </script>
+
+		<script>
+         
+        $(function(){
+         
+            $(document).on( 'scroll', function(){
+         
+                if ($(window).scrollTop() > 100) {
+                    $('.scroll-top-wrapper').addClass('show');
+                } else {
+                    $('.scroll-top-wrapper').removeClass('show');
+                }
+            });
+         
+            $('.scroll-top-wrapper').on('click', scrollToTop);
+        });
+         
+        function scrollToTop() {
+            verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+            element = $('body');
+            offset = element.offset();
+            offsetTop = offset.top;
+            $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+        }
+        </script>
+
+        <!-- SCRIPT FOR BACK TO TOP BUTTON END -->
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+				_gaq.push(['_trackPageview']);
+			
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+
+	</body>
+
+</html>

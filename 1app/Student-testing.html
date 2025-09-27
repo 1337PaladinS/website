@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title> 1Application </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+
+		<!-- SmartAdmin RTL Support -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> 
+
+		<link rel="stylesheet" type="text/css" media="screen" href="css/custom_style.css">
+
+		<!-- #FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon-1app.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon-1app.ico" type="image/x-icon">
+
+		<!-- #GOOGLE FONT -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+		<!-- #APP SCREEN / ICONS -->
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		<script src="js/sck-wg.js"> </script>
+	</head>
+	
+	<!-- #BODY -->
+	<!-- Possible Classes
+
+		* 'smart-style-{SKIN#}'
+		* 'smart-rtl'         - Switch theme mode to RTL
+		* 'menu-on-top'       - Switch to top navigation (no DOM change required)
+		* 'no-menu'			  - Hides the menu completely
+		* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+		* 'fixed-header'      - Fixes the header
+		* 'fixed-navigation'  - Fixes the main menu
+		* 'fixed-ribbon'      - Fixes breadcrumb
+		* 'fixed-page-footer' - Fixes footer
+		* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+	-->
+	<body onLoad="checkCookie()">
+       <div class="scroll-top-wrapper">
+       <span class="scroll-top-inner">
+         <i class="fa fa-2x fa-arrow-circle-up"></i>
+       </span>
+     </div>
+		<!-- #HEADER -->
+		<header id="header">
+			<div id="logo-group">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo"> <img src="img/Logo.png" alt="1Application"> </span>
+				<!-- END LOGO PLACEHOLDER -->
+			</div>
+
+			<!-- #TOGGLE LAYOUT BUTTONS -->
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+				
+				<!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+				
+				<!-- #MOBILE -->
+				<!-- Top menu profile link : this shows only when top menu is active -->
+				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+					<li class="">
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
+							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<!-- logout button -->
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a title="Log Out"><i class="fa fa-sign-out"></i></a> </span>
+				</div>
+				<!-- end logout button -->
+
+				<!-- fullscreen button -->
+				<div id="fullscreen" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+				</div>
+				<!-- end fullscreen button -->
+			</div>
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- END HEADER -->
+
+		<!-- #NAVIGATION -->
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel">
+
+			<!-- User info -->
+			<div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+					
+						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<span id="username_head">
+							
+						</span>
+						
+				</span>
+			</div>
+			<!-- end user info -->
+
+			<nav>
+				<!-- 
+				NOTE: Notice the gaps after each icon usage <i></i>..
+				Please note that these links work a bit different than
+				traditional href="" links. See documentation for details.
+				-->
+
+				<ul>
+					<li>
+						<a href="Student-Dashboard.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+					</li>
+					<li class="active">
+						<a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">1 Application</span></a>
+                     <ul>
+							<li>
+								<a href="Student-Profile.html" title="Profile"><span class="menu-item-parent">Profile</span></a>
+							</li>
+							<li>
+								<a href="Student-family.html" title="Family"><span class="menu-item-parent">Family</span></a>
+							</li>
+                            <li>
+								<a href="Student-education.html" title="Education"><span class="menu-item-parent">Education</span></a>
+							</li>
+                            <li class="active">
+								<a href="#" title="Testing"><span class="menu-item-parent">Testing</span></a>
+							</li>
+                            <li>
+								<a href="Student-docupload.html" title="Doc Upload"><span class="menu-item-parent">Document Upload</span></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="Student-search.html"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Advanced Search</span></a>
+					</li><li>
+						<a href="ChangePassword.html"><i class="fa fa-lg fa-fw fa-key"></i> <span class="menu-item-parent">Change Password</span></a>
+					</li>
+				</ul>
+			</nav>
+			
+
+			<span class="minifyme" data-action="minifyMenu"> 
+				<i class="fa fa-arrow-circle-left hit"></i> 
+			</span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+
+				<!-- breadcrumb -->
+				<ol class="breadcrumb">
+					
+				</ol>
+				<!-- end breadcrumb -->
+			</div>
+			<!-- END RIBBON -->
+			
+			
+
+			<!-- MAIN CONTENT -->
+			<div id="content">
+
+				<!-- row -->
+				<div class="row">
+					
+					<!-- col -->
+					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+						<h1 class="page-title txt-color-blueDark">
+							
+							Testing
+								
+						</h1>
+					</div>
+					<!-- end col -->
+					
+				</div>
+				<!-- end row -->
+				
+				<!--
+					The ID "widget-grid" will start to initialize all widgets below 
+					You do not need to use widgets if you dont want to. Simply remove 
+					the <section></section> and you can use wells or panels instead 
+					-->
+				
+				<!-- widget grid -->
+				<section id="widget-grid" class="">
+				
+					<!-- row -->
+					<div class="row">
+						
+						<!-- NEW WIDGET START -->
+						<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                           <div id="tests">
+                             <legend>Tests Information <a target='_blank' href='http://www.1application.in/howto.html'>(?)</a></legend>
+                              <form class="form-horizontal" id="testing-form">
+                                   <fieldset>
+
+                                          <div class="form-group">
+                                          <label class="control-label col-md-2">Test Name </label>
+                                          <div class="col-md-4">
+                                              <select class="form-control" disabled="disabled" id="test_names">
+                                              </select>
+											  <div id="test-id" style="display:none"></div><div id="test-certid" style="display:none"></div>
+											  <div id="test-count" style="display:none"></div>
+                                          </div>
+                                          </div>
+                                           
+                                          <div class="form-group">
+											<label class="col-md-2 control-label">Score/Rank/%ile/%age </label>
+											<div class="col-md-4">
+                                              <input class="form-control" type="text" disabled="disabled" id="percent-score">
+											</div>
+											</div>
+											
+											<div class="form-group">
+											<label class="col-md-2 control-label">Roll Number</label>
+											<div class="col-md-4">
+                                              <input class="form-control" type="text" disabled="disabled" id="roll-number"">
+											</div>
+											</div>
+											
+											<div class="form-group">
+											<label class="col-md-2 control-label">Registration Number</label>
+											<div class="col-md-4">
+                                              <input class="form-control" type="text" disabled="disabled" id="reg-number">
+											</div>
+											</div>
+											
+										  <div class="form-group">
+                                          <label class="col-md-2 control-label">Date Taken </label>
+                                          <div class="col-md-4">
+                                              
+											  <div class="input-group">
+													<input class="form-control datepicker" data-dateformat="yy-mm-dd" id="date-taken" type="text" placeholder="From" disabled="disabled">
+													<label for="date-taken" class="input-group-addon btn"><span class="fa fa-calendar"></span></label>
+												</div>
+                                          </div>
+                                          </div>
+                                             </fieldset>
+                                         </form>
+                                      <a class="btn btn-primary" data-toggle="modal" data-target="#test_modal" id="test-add"><i class="fa fa-plus"></i> Add</a>
+									   <div class="modal fade" id="test_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                            &times;
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">Add Tests</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <div class="well">
+                                         <form class="form-horizontal">
+                                         <fieldset>
+                                          <div class="form-group">
+                                            <label class="control-label col-md-4">Select Test</label>
+                                            <div class="col-md-6">
+                                              <select class="form-control" id="test-sel-modal">
+                                             </select>
+                                             </div>
+                                          </div>
+                                          <div class="form-group">
+                                          <label class="col-md-4 control-label">Score %</label>
+                                          <div class="col-md-6">
+											<input class="form-control" type="text" id="percent-score-modal">
+                                          </div>
+                                          </div>
+										  <div class="form-group">
+                                          <label class="col-md-4 control-label">Roll Number</label>
+                                          <div class="col-md-6">
+											<input class="form-control" type="text" id="roll-number-modal">
+                                          </div>
+                                          </div>
+										  <div class="form-group">
+                                          <label class="col-md-4 control-label">Registration Number</label>
+                                          <div class="col-md-6">
+											<input class="form-control" type="text" id="reg-number-modal">
+                                          </div>
+                                          </div>
+										  <div class="form-group">
+                                          <label class="col-md-4 control-label">Date Taken</label>
+                                          <div class="col-md-6">
+												<div class="input-group">
+													<input class="form-control datepicker" data-dateformat="yy-mm-dd" id="date-taken-modal" type="text" style="z-index: 2000 !important;" >
+													<label for="date-taken-modal" class="input-group-addon btn"><span class="fa fa-calendar"></span></label>
+												</div>
+                                          </div>
+                                          </div>
+									    </fieldset>
+                                         </form>
+                                          
+                                        </div>
+          
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                      <button type="button" class="btn btn-primary" id="add-test-modal">
+                                            Add
+                                        </button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+				         </div>
+
+									  <a href="javascript:void(0);" class="btn btn-labeled btn-primary" id="edit-btn"> <span class="btn-label"><i class="glyphicon glyphicon-pencil"></i></span>Edit </a>
+                            <a href="javascript:void(0);" class="btn btn-labeled btn-primary" id="save-btn" style="display: none;"> <span class="btn-label"><i class="fa fa-save"></i></span>Save </a>
+									  </div>
+                                </div>
+
+						</article>
+						<!-- WIDGET END -->
+						
+					</div>
+                    
+				    
+					<!-- end row -->
+				
+				</section>
+				<!-- end widget grid -->
+
+			</div>
+			<!-- END MAIN CONTENT -->
+
+		</div>
+		<!-- END MAIN PANEL -->
+
+		<!-- PAGE FOOTER -->
+		<div class="page-footer">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<span class="txt-color-white">1Application © 2016</span>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE FOOTER -->
+
+		<!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+			}
+		</script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+			}
+		</script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="js/app.config.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+
+		<!-- BOOTSTRAP JS -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="js/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices -->
+		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+
+		<!--[if IE 8]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.min.js"></script>
+
+		<!-- PAGE RELATED PLUGIN(S) -->
+		<script>
+		
+		function getCertName(id, cert_array)
+		{
+			var index =  cert_array.indexOf(id);
+			if (index >= 0) return cert_array[index+2];
+			return "notfound";
+		}
+		
+		function populateTests()
+		{
+		
+		var sel_count = 0;
+		
+                    $.ajax({
+						 type: 'GET',
+						 url: get_endpoint() + "oneapplication/common/cert", 
+						 contentType:"application/json",
+						 success: function (data) {
+                         
+						  if(data.status == "SUCCESS") {
+	
+							var lang_length = data.responseData.length;
+							//get count of selects
+							sel_count = $('#test-count').text();
+							
+							for(i=0;i<sel_count;i++){
+							if (i ==0) j="";
+								else j=i+1;
+                            for (var s = 0; s < lang_length; s++) {
+									console.log("val-"+$('#test_names'+j).val()+"data-id--"+data.responseData[s].id);
+									if($('#test_names'+j).val()!= data.responseData[s].id && 
+									$('#test_names'+j+ ' option').size()<lang_length) //add only if not selected
+									{
+									console.log("adding"+$('#test_names'+j+ 'option').size());
+									$('#test_names'+j).append('<option value="'+data.responseData[s].id+'">'+data.responseData[s].dispName+'</option>');
+									 }
+									}
+								}
+							} // End If
+	
+						   else if (data.status == "FAILURE") {
+												  
+						  } // End Else If
+	
+						  }, // End Success Call
+	
+							error: function (data, textStatus, errorThrown) { //In case of error
+							 alert(errorThrown);
+						 }
+					   
+						 });
+
+		}
+
+		</script>
+
+
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+			 	
+				 $("#username_head").text(getCookie("userfirstname"));
+				 pageSetUp();
+				 var user_id = getCookie("userid");
+                 
+                 <!-- Ajax call for Logout - Start -->
+
+                    $('#logout').click(function() {
+
+                     $.ajax({
+                     type: 'POST',
+                     url: get_endpoint() + "oneapplication/user/logout/" + user_id, 
+                     contentType:"application/json",
+                     datatype : "json",
+                     success: function (data) {
+                      alert(data.message);
+                      if(data.status == "SUCCESS") {
+                        eraseCookie("userid");
+                        eraseCookie("username");
+                        eraseCookie("userfirstname");
+                        eraseCookie("userrole");
+                        location.href = "login.html";
+                        } // End If
+
+                       else if (data.status == "FAILURE") {
+                                              
+                      } // End Else If
+
+                      }, // End Success Call
+
+                        error: function (data, textStatus, errorThrown) { //In case of error
+                         alert(errorThrown);
+                     }
+                   
+                     }); // End Ajax Call
+                        
+                    }); // End Click function
+           
+                 <!-- Ajax call for Logout - End -->
+
+                 <!-- Function for Edit Button Start -->
+
+                  $('#edit-btn').click(function() {
+
+                  $('#save-btn').toggle();
+				  
+				  populateTests(); 
+                  
+                    $('input,select').each(function() {
+
+                       if($(this).attr('disabled')) {
+
+                        $(this).removeAttr('disabled');
+                       }
+                        else {
+                        $(this).attr({
+
+                         'disabled': 'disabled'
+                         });
+                       }
+                        
+                    });
+  
+                  }); // End Click Function
+				  
+				  <!-- Function for Save Button Start -->
+                  $('#save-btn').click(function() {
+                   $('#save-btn').hide();
+
+                   $('input,select').each(function() {
+                       
+                        $(this).attr({
+
+                         'disabled': 'disabled'
+                         });  
+                        
+                    });
+					<!-- Ajax Call Start -->
+                    <!-- 1. Edit/Save cert details-->
+					var test_cnt = 1; //get no of tests
+					test_cnt = $('#test-count').text();
+					console.log("test_cnt:"+test_cnt );
+					var data_array = [];
+					var requestType = "POST";
+					
+					var test_id = 0;
+					var score_ed = 0;
+					var date_ed = "";
+					for(var i=0; i < test_cnt; i++) {
+					if (i ==0) j="";
+					else j=i+1;
+					var test_id = $('#test-id'+j).text();
+					//var test_certid = $('#test-certid'+j).text();
+					var test_certid = $('#test_names'+j).val();
+					score_ed = $('#percent-score'+j).val();
+					date_ed = $('#date-taken'+j).val();
+					var roll_no = $('#roll-number'+j).val();
+					var reg_no = $('#reg-number'+j).val();
+					//var regex = new RegExp('.', 'g');
+					//var date_ed_arr = date_ed.split("."); 
+					//date_ed = date_ed_arr[2]+"-"+date_ed_arr[1]+"-"+date_ed_arr[0];
+
+					console.log("test id:"+test_id+"--"+ score_ed + "--"+date_ed );
+					
+					data_array = {"userId": parseInt(user_id), "certDetails": [ {"testCertId":parseInt(test_id), "score" : parseInt(score_ed) ,"dateTaken":date_ed, "rollNumber":roll_no, "regNumber":reg_no } ] };
+					if(test_certid!="") //id exists edit case
+					{
+						data_array = { "userId": user_id,"id":test_id, "testCertId":test_certid, "score" : score_ed ,"dateTaken":date_ed,"rollNumber":roll_no, "regNumber":reg_no};
+						requestType = "PUT";
+					}
+					else 
+						console.log("First time! Need to add new testing");
+					console.log(JSON.stringify(data_array));
+					$.ajax({
+                    type: requestType, 
+                    url: get_endpoint() + "oneapplication/secure/student/details/certs/add", 
+					contentType:"application/json",
+                    datatype : "json",
+                    data: JSON.stringify(data_array),
+                    success: function (responseData) {
+                     
+                   if(responseData.status == "SUCCESS") {
+                   
+					alert(responseData.message);
+                     
+                   } // End If
+                   else if (responseData.status == "FAILURE") {
+				   console.log(responseData.message);
+                                              
+                      } // End Else If
+                   },
+                     error: function (responseData, textStatus, errorThrown) { //In case of error
+                     
+                     }
+                    });
+
+					} //end for
+					
+					
+					
+				});
+                 <!-- Ajax Call Start --> 
+				 <!-- Initialize test modal --> 
+				    $('#test-add').click(function() {
+					
+					var sel_len = $('#test-sel-modal').length;
+                    if (sel_len > 0) {
+                    $('#test-sel-modal').empty();
+                    } 
+					$('#test-sel-modal').prop('disabled', false);
+					$('#percent-score-modal').prop('disabled', false);
+					$('#date-taken-modal').prop('disabled', false);
+					$('#roll-number-modal').prop('disabled', false);
+					$('#reg-number-modal').prop('disabled', false);
+                    $.ajax({
+						 type: 'GET',
+						 url: get_endpoint() + "oneapplication/common/cert", 
+						 contentType:"application/json",
+						 success: function (data) {
+                         
+						  if(data.status == "SUCCESS") {
+
+	
+							var lang_length = data.responseData.length;
+                            for (var s = 0; s < lang_length; s++) {
+
+                              $('#test-sel-modal').append('<option value="'+ data.responseData[s].id +'" selected="selected">'+
+							  data.responseData[s].dispName+'</option>');
+                            }
+	
+							} // End If
+	
+						   else if (data.status == "FAILURE") {
+												  
+						  } // End Else If
+	
+						  }, // End Success Call
+	
+							error: function (data, textStatus, errorThrown) { //In case of error
+							 alert(errorThrown);
+						 }
+					   
+						 });
+					});	
+				/* Initialize test modal end */
+				$('#add-test-modal').click(function() {
+				
+					test_id = $('#test-sel-modal').val();
+					score_ed = $('#percent-score-modal').val();
+					date_ed = $('#date-taken-modal').val();
+					var roll_no_mod = $('#roll-number-modal').val();
+					var reg_no_mod = $('#reg-number-modal').val();
+					
+					data_array = {"userId": user_id, "certDetails": [ {"testCertId":test_id, "score" : score_ed ,"dateTaken":date_ed,"rollNumber":roll_no_mod, "regNumber":reg_no_mod } ] };
+
+					console.log(JSON.stringify(data_array));
+					
+					$.ajax({
+                    type: 'POST', 
+                    url: get_endpoint() + "oneapplication/secure/student/details/certs/add", 
+					contentType:"application/json",
+                    datatype : "json",
+                    data: JSON.stringify(data_array),
+                    success: function (responseData) {
+                     
+                   if(responseData.status == "SUCCESS") {
+                   
+					alert(responseData.message);
+                    //$('#test_modal').dialog('close');
+                    $('.close').click();
+                     
+                   } // End If
+                   else if (responseData.status == "FAILURE") {
+                                              
+                      } // End Else If
+                   },
+                     error: function (responseData, textStatus, errorThrown) { //In case of error
+                     
+                     }
+                   });
+				});	
+
+						
+				 var cert_array = [];
+				 /*
+				    $.ajax({
+                    type: 'GET', 
+                     url: "http://54.175.165.80:8080/oneapplication/secure/common/cert", 
+					 
+					contentType:"application/json",
+                     datatype : "json",
+                    
+                    success: function (responseData) {
+                     
+                   if(responseData.status == "SUCCESS") {
+                   cert_array =  responseData.responseData;
+					alert("cert--"+JSON.stringify(cert_array));
+                     
+                   } // End If
+                      else if (responseData.status == "FAILURE") {
+                                              
+                      } // End Else If
+                   },
+                     error: function (responseData, textStatus, errorThrown) { //In case of error
+                     
+                     }
+                    }); */
+					
+				var data_array =  {"userId":user_id };
+               $.ajax({
+                    
+                    type: 'POST', 
+                     url: get_endpoint() + "oneapplication/secure/student/details/certs", 
+					 
+					contentType:"application/json",
+                     datatype : "json",
+                     data: JSON.stringify(data_array),
+                    success: function (responseData) {
+                     
+                   if(responseData.status == "SUCCESS") {
+							//first set is always there 
+							$('#test-id').text(responseData.responseData.certDetails[0].id); //id set on first fetch or refresh
+							if(responseData.responseData.certDetails[0].tests){
+								$('#test-certid').text(responseData.responseData.certDetails[0].tests.id);
+								$('#test_names').append('<option value="'+responseData.responseData.certDetails[0].tests.id+'" selected="selected">'+responseData.responseData.certDetails[0].tests.dispName+'</option>');
+								$('#percent-score').val(responseData.responseData.certDetails[0].score);
+								$('#date-taken').val(responseData.responseData.certDetails[0].dateTaken);
+								$('#roll-number').val(responseData.responseData.certDetails[0].rollNumber);
+								$('#reg-number').val(responseData.responseData.certDetails[0].regNumber);
+							}
+							//for more build dynamically
+						
+						$('#test-count').text(responseData.responseData.certDetails.length);
+						for(var i=1; i < responseData.responseData.certDetails.length; i++) {
+                           j = i+1;
+                            if(typeof responseData.responseData.certDetails[i].tests!="undefined"){//added rwg 29.4
+
+                          $('<fieldset><div class="form-group"><label class="control-label col-md-2">Test Name</label><div class="col-md-4"><select class="form-control" disabled="disabled" id="test_names'+j+'"></select><div id="test-id'+j+'"style="display:none"> </div><div id="test-certid'+j+'"style="display:none"> </div></div></div><div class="form-group"><label class="col-md-2 control-label">Score %</label><div class="col-md-4"><input class="form-control" type="text" disabled="disabled" id="percent-score'+j+'"></div></div></div><div class="form-group"><label class="col-md-2 control-label">Roll Number</label><div class="col-md-4"><input class="form-control" type="text" disabled="disabled" id="roll-number'+j+'"></div></div></div><div class="form-group"><label class="col-md-2 control-label">Registration Number</label><div class="col-md-4"><input class="form-control" type="text" disabled="disabled" id="reg-number'+j+'"></div></div></div><div class="form-group"><label class="col-md-2 control-label">Date Taken </label><div class="col-md-4"><div class="input-group"><input class="form-control datepicker" data-dateformat="yy-mm-dd" type="text" disabled="disabled" id="date-taken'+j+'"><label for="date-taken'+j+'" class="input-group-addon btn"><span class="fa fa-calendar"></span></label></div></div></div></fieldset>').appendTo('#testing-form');          
+						$('#test-id'+j).text(responseData.responseData.certDetails[i].id);	
+						$('#test-certid'+j).text(responseData.responseData.certDetails[i].testCertId);	
+						if(responseData.responseData.certDetails[0].tests){
+                         $('#test_names'+j).append('<option value="'+responseData.responseData.certDetails[i].tests.id+'" selected="selected">'+responseData.responseData.certDetails[i].tests.dispName+'</option>');
+						 }
+						 $('#percent-score'+j).val(responseData.responseData.certDetails[i].score);
+						 $('#date-taken'+j).val(responseData.responseData.certDetails[i].dateTaken);
+						 $('#roll-number'+j).val(responseData.responseData.certDetails[i].rollNumber);
+						 $('#reg-number'+j).val(responseData.responseData.certDetails[i].regNumber);
+						 
+                          $('#testing-form').find(".datepicker").datepicker({dateFormat: "yy-mm-dd"});
+                         }//added rwg 29.4
+						 }
+
+					}// End If
+                      else if (responseData.status == "FAILURE") {
+                                              
+                      } // End Else If
+                   },
+                     error: function (responseData, textStatus, errorThrown) { //In case of error
+                     
+                     }
+                    });
+                <!-- Ajax Call End -->
+				
+				
+			})
+		
+		</script>
+		<!-- SCRIPT FOR BACK TO TOP BUTTON-->
+         <script>
+ 
+       $(function(){
+ 
+	    $(document).on( 'scroll', function(){
+ 
+		    if ($(window).scrollTop() > 100) {
+			  $('.scroll-top-wrapper').addClass('show');
+		      } else {
+			   $('.scroll-top-wrapper').removeClass('show');
+		      }
+	        });
+         });
+        </script>
+
+		<script>
+         
+        $(function(){
+         
+            $(document).on( 'scroll', function(){
+         
+                if ($(window).scrollTop() > 100) {
+                    $('.scroll-top-wrapper').addClass('show');
+                } else {
+                    $('.scroll-top-wrapper').removeClass('show');
+                }
+            });
+         
+            $('.scroll-top-wrapper').on('click', scrollToTop);
+        });
+         
+        function scrollToTop() {
+            verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+            element = $('body');
+            offset = element.offset();
+            offsetTop = offset.top;
+            $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+        }
+        </script>
+
+        <!-- SCRIPT FOR BACK TO TOP BUTTON END -->
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+				_gaq.push(['_trackPageview']);
+			
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+
+	</body>
+
+</html>
